@@ -7,12 +7,14 @@ if($data['cid'] != '' or $data['sid'] != '')
 {
     
     $cid = $data['cid'];
-	$sid = $data['sid'];
+    $sid = $data['sid'];
     
-     $counter = $con->query("select * from product where cid=".$cid." and sid=".$sid." and status=1");
+    $model = $data['model'];
+    
+     $counter = $con->query("select * from product where cid=".$cid." and sid_=".$model." and sid=".$sid." and status=1");
     if($counter->num_rows != 0)
     {
-    $query = $con->query("select * from product where cid=".$cid." and sid=".$sid." and status=1");
+    $query = $con->query("select * from product where cid=".$cid." and sid_=".$model." and sid=".$sid." and status=1");
     $result = array();
     $pp=array();
 	

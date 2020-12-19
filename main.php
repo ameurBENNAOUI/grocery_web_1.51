@@ -53,6 +53,20 @@ else
                   
                 
               </li>
+
+              <li class="has-sub nav-item"><a href="#"><i class="ft-list"></i><span data-i18n="" class="menu-title">Sub Category_</span></a>
+                <ul class="menu-content">
+                  <li><a href="subcategory_.php" class="menu-item active">Add Subcategory_</a>
+                  </li>
+                  <li><a href="subcategorylist_.php" class="menu-item">Sub Category List_</a>
+                  </li>
+                 
+                    </ul>
+                  
+                
+              </li>
+
+
               <li class="has-sub nav-item"><a href="#"><i class="ft-package"></i><span data-i18n="" class="menu-title">Product</span></a>
                 <ul class="menu-content">
                   <li><a href="product.php" class="menu-item">Add Product</a>

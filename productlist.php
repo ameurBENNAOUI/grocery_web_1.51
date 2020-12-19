@@ -36,6 +36,8 @@
                                     <th>Seller Name</th>
                                     <th>Category Name</th>
 									<th>SubCategory Name</th>
+									<th>SubCategory_ Name</th>
+
                                     <th>Small Description</th>
                                     <th>Product Range</th>
                                     <th>Product Price</th>
@@ -77,6 +79,11 @@
 								
                                 <td><?php $cat= $con->query("select * from category where id=".$rkl['cid']."")->fetch_assoc(); echo $cat['catname'];?></td>
 								<td><?php $cat= $con->query("select * from subcategory where id=".$rkl['sid']."")->fetch_assoc(); echo $cat['name'];?></td>
+
+								<td><?php $cat= $con->query("select * from subcategory_ where id=".$rkl['sid_']."")->fetch_assoc(); echo $cat['name'];?></td>
+
+
+
                                 <td><?php echo substr($rkl['psdesc'],0,100).'....';?></td>    
 									<td><?php echo $rkl['pgms'];?></td>
 									<td><?php echo $rkl['pprice'];?></td>

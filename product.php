@@ -201,6 +201,27 @@ if(isset($_GET['edit']))
 												
 											</select>
 										</div>
+
+										<div class="form-group">
+											<label for="projectinput6">Select SubCategory</label>
+											<select id="sub_list_" name="subcatname_" class="form-control">
+												
+												<?php 
+												$j = mysqli_fetch_assoc(mysqli_query($con,"select * from subcategory_ where id=".$selk['sid_']." and subcat_id =".$selk['sid']." and cat_id=".$selk['cid'].""));
+												?>
+												<option value="<?php echo $j['id'];?>"><?php echo $j['name'];?></option>
+												<?php 
+												$sk = mysqli_query($con,"select * from subcategory_ where id !=".$selk['sid_']." and subcat_id =".$selk['sid']." and cat_id=".$selk['cid']."");
+												while($h = mysqli_fetch_assoc($sk))
+												{
+												?>
+												<option value="<?php echo $h['id'];?>"><?php echo $h['name'];?></option>
+												<?php } ?>
+												
+											</select>
+										</div>
+
+
 										
 										<div class="form-group">
 											<label for="projectinput6">Out OF Stock?</label>
@@ -460,24 +481,33 @@ else
 								</div>
 								
 								<div class="form-group">
-											<label for="projectinput6">Select Category</label>
-											<select id="cat_change" name="catname" class="form-control" required>
-												<option value="" selected="" disabled="">Select Category</option>
-												<?php 
-												$sk = mysqli_query($con,"select * from category");
-												while($h = mysqli_fetch_assoc($sk))
-												{
-												?>
-												<option value="<?php echo $h['id'];?>"><?php echo $h['catname'];?></option>
-												<?php } ?>
-												
-											</select>
-										</div>
+									<label for="projectinput6">Select Category</label>
+									<select id="cat_change" name="catname" class="form-control" required>
+										<option value="" selected="" disabled="">Select Category</option>
+										<?php 
+										$sk = mysqli_query($con,"select * from category");
+										while($h = mysqli_fetch_assoc($sk))
+										{
+										?>
+										<option value="<?php echo $h['id'];?>"><?php echo $h['catname'];?></option>
+										<?php } ?>
+										
+									</select>
+								</div>
 										
 										<div class="form-group">
 											<label for="projectinput6">Select SubCategory</label>
 											<select id="sub_list" name="subcatname" class="form-control" required>
 												<option value="" selected="" disabled="">Select SubCategory</option>
+												
+												
+											</select>
+										</div>
+
+										<div class="form-group">
+											<label for="projectinput6">Select SubCategory_</label>
+											<select id="sub_list_" name="subcatname_" class="form-control" required>
+												<option value="" selected="" disabled="">Select SubCategory_</option>
 												
 												
 											</select>
@@ -585,6 +615,8 @@ $sname = $_POST['sname'];
 
 		$catname = $_POST['catname'];
 		$subcatname = $_POST['subcatname'];
+		$subcatname_ = $_POST['subcatname_'];
+
 		$ostock = $_POST['ostock'];
 		$snoti = $_POST['snoti'];
 		$psdesc = mysqli_real_escape_string($con,$_POST['psdesc']);
@@ -658,7 +690,7 @@ else
 		 else{
 			 $related = '';
 		 }
-		$con->query("insert into product(`pname`,`pimg`,`prel`,`sname`,`cid`,`sid`,`psdesc`,`pgms`,`pprice`,`date`,`status`,`stock`,`discount`,`popular`)values('".$pname."','".$url."','".$related."','".$sname."',".$catname.",".$subcatname.",'".$psdesc."','".$pgms."','".$pprice."','".$timestamp."',".$status.",".$ostock.",".$discount.",".$popular.")");
+		$con->query("insert into product(`pname`,`pimg`,`prel`,`sname`,`cid`,`sid`,`sid_`,`psdesc`,`pgms`,`pprice`,`date`,`status`,`stock`,`discount`,`popular`)values('".$pname."','".$url."','".$related."','".$sname."',".$catname.",".$subcatname.",".$subcatname_.",'".$psdesc."','".$pgms."','".$pprice."','".$timestamp."',".$status.",".$ostock.",".$discount.",".$popular.")");
 	
 		if($snoti == 1)
 		{
@@ -746,6 +778,23 @@ document.getElementById('f_up').addEventListener('change', function(e){
 			success:function(data)
 			{
 				$('#sub_list').html(data);
+			}
+		});
+	});
+	$(document).on('change','#sub_list',function()
+	{
+		var value = $(this).val();
+		
+		$.ajax({
+			type:'post',
+			url:'getsub_.php',
+			data:
+			{
+				catid:value
+			},
+			success:function(data)
+			{
+				$('#sub_list_').html(data);
 			}
 		});
 	});

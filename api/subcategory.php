@@ -1,28 +1,29 @@
 <?php 
 require 'db.php';
 $data = json_decode(file_get_contents('php://input'), true);
-if($data['category_id'] == '')
+if($data['purview'] == '' or $data['year'] == '' )
 {
     $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went Wrong!");
 }
 else
 {
-	$cat_id = $data['category_id'];
+	$cat_id = $data['purview'];
+	$sub_cat_id = $data['year'];
 	
 	
-$sel = $con->query("select * from subcategory where cat_id=".$cat_id." ");
-$count = $con->query("select * from subcategory where cat_id=".$cat_id." ")->num_rows;
+$sel = $con->query("select * from subcategory_ where cat_id=".$cat_id." and subcat_id=".$sub_cat_id."  ");
+$count = $con->query("select * from subcategory_ where cat_id=".$cat_id." and subcat_id=".$sub_cat_id." ")->num_rows;
 if($count != 0)
 {
 	$myarray = array();
 while($row = $sel->fetch_assoc())
 {
-     $p['id'] = $row['id'];
-	  $p['cat_id'] = $row['cat_id'];
-		$p['name'] = $row['name'];
-		$p['img'] = $row['img'];
-		$p['count'] = $con->query("select * from product where sid=".$row['id']."")->num_rows;
-		$myarray[] = $p;
+    $p['id'] = $row['id'];
+	$p['cat_id'] = $row['cat_id'];
+	$p['name'] = $row['name'];
+	$p['img'] = $row['catimg'];
+	$p['count'] = $con->query("select * from product where sid=".$row['id']."")->num_rows;
+	$myarray[] = $p;
 }
 $returnArr = array("data"=>$myarray,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Subcategory List Founded!");
 }
