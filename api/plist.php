@@ -55,11 +55,11 @@ else
 	$wallet = $row['wal_amt'];
 	$address_id = $row['address_id'];
 	$rid = $row['rid'];
-    //$result['total'] = $row['total'];
-    //$result['status'] = $row['status'];
-    //$result['order_date'] = $row['order_date'];
-    //$result['timesloat'] = $row['timesloat'];
-    //$pp[] = $result;
+    $result['total'] = $row['total'];
+    $result['status'] = $row['status'];
+    $result['order_date'] = $row['order_date'];
+    $result['timesloat'] = $row['timesloat'];
+    $pp[] = $result;
     }
    
     $orate = $con->query("select * from rate_order where oid='".$id."'");
@@ -89,7 +89,14 @@ $dc = $con->query("select * from area_db where name='".$c['area']."'");
 			{
 				
 			$px = $dc['dcharge'];
-			}
-    $returnArr = array("productinfo"=>$k,"Sub_total"=>array_sum($ksub),"orderid"=>$id,"counpon_discount"=>$counpon_discount,"wallet_discount"=>$wallet,"address"=>$address_cust,"address_type"=>$atype,"customer_name"=>$cname,"total_amt"=>$total,"rider_mobile"=>$rider['mobile'],"rider_name"=>$rider['name'],"p_method"=>$p_method,"status"=>$status,"order_date"=>$odate,"timesloat"=>$timesloat,"Israted"=>$rate,"d_charge"=>$px,"tax"=>$tax,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Order Product Get successfully!");
+            }
+            
+            if ($rid!=0){
+                $returnArr = array("productinfo"=>$k,"Sub_total"=>array_sum($ksub),"orderid"=>$id,"counpon_discount"=>$counpon_discount,"wallet_discount"=>$wallet,"address"=>$address_cust,"address_type"=>$atype,"customer_name"=>$cname,"total_amt"=>$total,"rider_mobile"=>$rider['mobile'],"rider_name"=>$rider['name'],"p_method"=>$p_method,"status"=>$status,"order_date"=>$odate,"timesloat"=>$timesloat,"Israted"=>$rate,"d_charge"=>$px,"tax"=>$tax,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Order Product Get successfully!");
+
+            }else{
+                $returnArr = array("productinfo"=>$k,"Sub_total"=>array_sum($ksub),"orderid"=>$id,"counpon_discount"=>$counpon_discount,"wallet_discount"=>$wallet,"address"=>$address_cust,"address_type"=>$atype,"customer_name"=>$cname,"total_amt"=>$total,"p_method"=>$p_method,"status"=>$status,"order_date"=>$odate,"timesloat"=>$timesloat,"Israted"=>$rate,"d_charge"=>$px,"tax"=>$tax,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Order Product Get successfully!");
+
+            }
 }
 echo json_encode($returnArr);

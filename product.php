@@ -167,6 +167,7 @@ if(isset($_GET['edit']))
 								<div class="form-group">
 											<label for="projectinput6">Select Category</label>
 											<select id="cat_change" name="catname" class="form-control">
+											
 												
 												<?php 
 												$j = mysqli_fetch_assoc(mysqli_query($con,"select * from category where id=".$selk['cid'].""));
@@ -482,7 +483,7 @@ else
 								
 								<div class="form-group">
 									<label for="projectinput6">Select Category</label>
-									<select id="cat_change" name="catname" class="form-control" required>
+									<select id="cat_change" name="catname" class="form-control" >
 										<option value="" selected="" disabled="">Select Category</option>
 										<?php 
 										$sk = mysqli_query($con,"select * from category");
@@ -497,7 +498,7 @@ else
 										
 										<div class="form-group">
 											<label for="projectinput6">Select SubCategory</label>
-											<select id="sub_list" name="subcatname" class="form-control" required>
+											<select id="sub_list" name="subcatname" class="form-control" >
 												<option value="" selected="" disabled="">Select SubCategory</option>
 												
 												
@@ -506,7 +507,7 @@ else
 
 										<div class="form-group">
 											<label for="projectinput6">Select SubCategory_</label>
-											<select id="sub_list_" name="subcatname_" class="form-control" required>
+											<select id="sub_list_" name="subcatname_" class="form-control" >
 												<option value="" selected="" disabled="">Select SubCategory_</option>
 												
 												
@@ -613,9 +614,16 @@ else
 		$pname = mysqli_real_escape_string($con,$_POST['pname']);
 $sname = $_POST['sname'];
 
-		$catname = $_POST['catname'];
-		$subcatname = $_POST['subcatname'];
-		$subcatname_ = $_POST['subcatname_'];
+
+		if(isset($_POST['catname'])) {
+			$catname = $_POST['catname'];
+			$subcatname = $_POST['subcatname'];
+			$subcatname_ = $_POST['subcatname_'];
+		} else  {
+			$catname = 0;
+			$subcatname = 0;
+			$subcatname_ = 0;		}
+
 
 		$ostock = $_POST['ostock'];
 		$snoti = $_POST['snoti'];

@@ -7,8 +7,20 @@ if($data['purview'] == '' or $data['year'] == '' )
 }
 else
 {
+	$uid=$data['uid'];
+
 	$cat_id = $data['purview'];
 	$sub_cat_id = $data['year'];
+
+	if(intval($uid)!=0){
+		$count = $con->query("select * from last_visit where uid=".$uid." ")->num_rows;
+		if ($count!=0){
+			$con->query("update `last_visit` set `purview_id`=".$cat_id.",`year_id`=".$sub_cat_id." WHERE `uid`=1");
+		}
+		else{
+			$con->query("insert into `last_visit`(`uid`, `purview_id`, `year_id`) values (".$uid.",".$cat_id.",".$sub_cat_id.")");
+		}
+	}
 	
 	
 $sel = $con->query("select * from subcategory_ where cat_id=".$cat_id." and subcat_id=".$sub_cat_id."  ");

@@ -32,7 +32,7 @@ while($rows = $sels->fetch_assoc())
 }
 
 $result = array();
-$prod = $con->query("select * from product where cid=0 and sid=0 and sid_=0 and status=1  order by id desc limit 5 ");
+$prod = $con->query("select * from product where status=1 and popular = 1 order by id desc limit 5 ");
 	while($row = $prod->fetch_assoc())
 	{
 		$result['id'] = $row['id'];
@@ -69,18 +69,15 @@ if($slist !=0)
     // $u_year["year_id"];
     $u_models = $con->query("select * from subcategory_ where cat_id = ".$u_year["purview_id"]." and subcat_id= ".$u_year["year_id"]." ");
 
-    // print_r($u_models->fetch_assoc());
 
     $plist = $con->query("select * from home where status = 1");
     
     $sev = array();
        while($rp = $u_models->fetch_assoc())
        {
-        // print_r($rp['subcat_id']);
-        // print_r($rp['cat_id']);
+        // print_r($rp);
 
-
-         $rpq =  $con->query("select * from product where status=1 and sid=".$rp['subcat_id']." and cid=".$rp['cat_id']." and sid_=".$rp['id']."  order by id desc");
+         $rpq =  $con->query("select * from product where status=1 and sid=".$rp['subcat_id']." and cid=".$rp['cat_id']."  order by id desc");
          $section = array();
        $sep = array();
          while($rps = $rpq->fetch_assoc())
