@@ -3,7 +3,8 @@
 require 'db.php';
 $data = json_decode(file_get_contents('php://input'), true);
  
-//$uid = $data['uid'];
+$uid = $data['uid'];
+echo $data;
 print_r($data);
 if($uid == '')
 {
