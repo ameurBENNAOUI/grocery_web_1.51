@@ -4,6 +4,7 @@ require 'db.php';
 $data = json_decode(file_get_contents('php://input'), true);
  
 $uid = $data['uid'];
+print_r($uid)
 if($uid == '')
 {
 	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went wrong  try again !");
