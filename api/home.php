@@ -4,7 +4,7 @@ require 'db.php';
 $data = json_decode(file_get_contents('php://input'), true);
  
 $uid = $data['uid'];
-echo $data;
+echo strval($data);
 print_r($data);
 if($uid == '')
 {
