@@ -21,7 +21,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Order List</h4>
+                    <h4 class="card-title">LISTE DE COMMANDE</h4>
                 </div>
                 <div class="card-body collapse show">
                     <div class="card-block card-dashboard">
@@ -29,12 +29,12 @@
                         <table class="table table-striped" id="example">
                             <thead>
                                 <tr>
-								 <th>Sr No.</th>
+								 <th>ID</th>
                                     <th>Date</th>
-                                     <th>Order ID</th>
-									 <th>Customer Sign</th>
+                                     <th>ID de Commande</th>
+									 <!-- <th>Customer Sign</th> -->
                                      <th>Status</th>
-                                     <th>Preview</th>
+                                     <th>Aperçu</th>
                                 
                                 </tr>
                             </thead>
@@ -52,7 +52,7 @@
                                     <td><?php echo $i; ?></td>
                                     <td><?php echo $row['order_date'];?></td>
                                     <td><?php echo $row['id'];?></td>
-                                   <td><?php 
+                                   <!-- <td><?php 
                    if($row['photo'] == '')
                    {
                      ?>
@@ -64,10 +64,10 @@
                    ?>
                    <img src="<?php echo 'data:image/jpeg;base64,'.$row['photo'];?>" width="100" height="100">
                    <?php } ?>
-                   </td>
+                   </td> -->
                                     <td><?php echo ucfirst($row['status']);?></td>
                                     								   <td>
-								  <button class="preview_d shadow-z-2 btn btn-primary" data-id="<?php echo $row['id'];?>" data-toggle="modal" data-target="#myModal">Preview</button></td>
+								  <button class="preview_d shadow-z-2 btn btn-primary" data-id="<?php echo $row['id'];?>" data-toggle="modal" data-target="#myModal">Aperçu</button></td>
 								  
 								  
                                    

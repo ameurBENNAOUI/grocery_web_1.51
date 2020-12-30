@@ -34,7 +34,7 @@
             <div class="media">
               <div class="media-body text-left">
                 <h3 class="mb-1 danger"><?php echo $con->query("select * from category")->num_rows;?></h3>
-                <span>Total Category</span>
+                <span>Total des Spécialité</span>
               </div>
               <div class="media-right align-self-center">
                 <i class="icon-list danger font-large-2 float-right"></i>
@@ -47,7 +47,7 @@
 	 
     </div>
     
-    <div class="col-xl-3 col-lg-6 col-12">
+    <!-- <div class="col-xl-3 col-lg-6 col-12">
       <div class="card">
 	  <a href="subcategorylist.php">
         <div class="card-content">
@@ -65,9 +65,9 @@
         </div>
 		</a>
       </div>
-    </div>
+    </div> -->
     
-    <div class="col-xl-3 col-lg-6 col-12">
+    <!-- <div class="col-xl-3 col-lg-6 col-12">
       <div class="card">
 	  <a href="productlist.php">
         <div class="card-content">
@@ -85,27 +85,9 @@
         </div>
 		</a>
       </div>
-    </div>
+    </div> -->
 	
-	<div class="col-xl-3 col-lg-6 col-12">
-      <div class="card">
-	  <a href="couponlist.php">
-        <div class="card-content">
-          <div class="px-3 py-3">
-            <div class="media">
-              <div class="media-body text-left">
-                <h3 class="mb-1 success"><?php echo $con->query("select * from tbl_coupon")->num_rows;?></h3>
-                <span>Total Coupon</span>
-              </div>
-              <div class="media-right align-self-center">
-                <i class="fa fa-gift success font-large-2 float-right"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-		</a>
-      </div>
-    </div>
+
 
     <div class="col-xl-3 col-lg-6 col-12">
       <div class="card">
@@ -115,7 +97,7 @@
             <div class="media">
               <div class="media-body text-left">
                 <h3 class="mb-1 warning"><?php echo $con->query("select * from area_db")->num_rows;?></h3>
-                <span>Total Area</span>
+                <span>Total des Zones</span>
               </div>
               <div class="media-right align-self-center">
                 <i class="icon-pie-chart warning font-large-2 float-right"></i>
@@ -126,7 +108,8 @@
 		</a>
       </div>
     </div>
-    <div class="col-xl-3 col-lg-6 col-12">
+
+    <!-- <div class="col-xl-3 col-lg-6 col-12">
       <div class="card">
 	  <a href="tlist.php">
         <div class="card-content">
@@ -144,7 +127,7 @@
         </div>
 		</a>
       </div>
-    </div>
+    </div> -->
     
      <div class="col-xl-3 col-lg-6 col-12">
       <div class="card">
@@ -154,7 +137,7 @@
             <div class="media">
               <div class="media-body text-left">
                 <h3 class="mb-1 primary"><?php echo $con->query("select * from banner")->num_rows;?></h3>
-                <span>Total Banner</span>
+                <span>Total des Bannières</span>
               </div>
               <div class="media-right align-self-center">
                 <i class="icon-screen-desktop primary font-large-2 float-right"></i>
@@ -175,7 +158,7 @@
             <div class="media">
               <div class="media-body text-left">
                 <h3 class="mb-1 success"><?php echo $con->query("select * from user")->num_rows;?></h3>
-                <span>Total Customer</span>
+                <span>total des clients</span>
               </div>
               <div class="media-right align-self-center">
                 <i class="icon-user success font-large-2 float-right"></i>
@@ -195,7 +178,7 @@
             <div class="media">
               <div class="media-body text-left">
                 <h3 class="mb-1 danger"><?php echo $con->query("select * from orders where status='pending'")->num_rows;?></h3>
-                <span>Pending Order</span>
+                <span>Commande en Cours</span>
               </div>
               <div class="media-right align-self-center">
                 <i class="icon-handbag danger font-large-2 float-right"></i>
@@ -215,7 +198,7 @@
             <div class="media">
               <div class="media-body text-left">
                 <h3 class="mb-1 primary"><?php echo $con->query("select * from orders where status='completed'")->num_rows;?></h3>
-                <span>Complete Order</span>
+                <span>Commande complète</span>
               </div>
               <div class="media-right align-self-center">
                 <i class="icon-handbag primary font-large-2 float-right"></i>
@@ -235,7 +218,7 @@
             <div class="media">
               <div class="media-body text-left">
                 <h3 class="mb-1 warning"><?php echo $con->query("select * from orders where status='cancelled'")->num_rows;?></h3>
-                <span>Cancelled Order</span>
+                <span>Commande Annulée</span>
               </div>
               <div class="media-right align-self-center">
                 <i class="icon-handbag warning font-large-2 float-right"></i>
@@ -247,7 +230,7 @@
       </div>
     </div>
     
-     <div class="col-xl-3 col-lg-6 col-12">
+     <!-- <div class="col-xl-3 col-lg-6 col-12">
 	 
       <div class="card">
 	  <a href="orderrate.php">
@@ -267,7 +250,7 @@
 		</a>
       </div>
 	  
-    </div>
+    </div> -->
     
      <div class="col-xl-3 col-lg-6 col-12">
       <div class="card">
@@ -277,7 +260,7 @@
             <div class="media">
               <div class="media-body text-left">
                 <h3 class="mb-1 primary"><?php echo $con->query("select * from feedback")->num_rows;?></h3>
-                <span>Total Feedback</span>
+                <span>Feedback Total</span>
               </div>
               <div class="media-right align-self-center">
                 <i class="icon-bubbles primary font-large-2 float-right"></i>
@@ -298,7 +281,7 @@
                 <h3 class="mb-1 success"><?php $sales  = $con->query("select sum(total) as full_total from orders where status='completed'")->fetch_assoc();
                
                  if($sales['full_total'] == ''){echo 0;}else {echo number_format((float)$sales['full_total'], 2, '.', ''); } ?></h3>
-                <span>Total Sales</span>
+                <span>Ventes totales</span>
               </div>
               <div class="media-right align-self-center">
                 <i class="icon-rocket success font-large-2 float-right"></i>
@@ -309,7 +292,7 @@
       </div>
     </div>
 	
-	 <div class="col-xl-3 col-lg-6 col-12">
+	 <!-- <div class="col-xl-3 col-lg-6 col-12">
       <div class="card">
 	  <a href="riderlist.php">
         <div class="card-content">
@@ -327,7 +310,7 @@
         </div>
 		</a>
       </div>
-    </div>
+    </div> -->
     
   </div>
 

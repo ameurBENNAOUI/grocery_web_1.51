@@ -38,14 +38,14 @@ function resizeImage($resourceType,$image_width,$image_height,$resizeWidth,$resi
         <div class="main-content">
           <div class="content-wrapper"><!--Statistics cards Starts-->
 <?php if(isset($_GET['edit'])) {
-$sels = $con->query("select * from subcategory where id=".$_GET['edit']."");
+$sels = $con->query("select * from subcategory_ where id=".$_GET['edit']."");
 $sels = $sels->fetch_assoc();
 ?>
 <div class="row">
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title" id="basic-layout-form">Edit SubCategory</h4>
+					<h4 class="card-title" id="basic-layout-form">Modifier Module</h4>
 					
 				</div>
 				<div class="card-body">
@@ -55,38 +55,46 @@ $sels = $sels->fetch_assoc();
 								
 
 							<div class="form-group">
-											<label for="projectinput6">Select Category</label>
-											<select id="cat_change" name="catname" class="form-control" required>
-												<option value="" selected="" disabled="">Select Category</option>
+											<label for="projectinput6">Choisir une specialité</label>
+											<select id="cat_change" name="spec" class="form-control" required>
+												<option value="" selected="" disabled="">Choisir une specialité</option>
 												<?php 
 												$sk = mysqli_query($con,"select * from category");
 												while($h = mysqli_fetch_assoc($sk))
 												{
 												?>
-												<option value="<?php echo $h['id'];?>"><?php echo $h['catname'];?></option>
+												<option value="<?php echo $h['id'];?>" <?php if($h['id'] == $sels['cat_id']) {echo 'selected';}?> > <?php echo $h['catname'];?></option>
 												<?php } ?>
 												
 											</select>
 										</div>
 
 								<div class="form-group">
-									<label for="projectinput6">Select SubCategory</label>
-									<select id="sub_list" name="subcatname" class="form-control" required>
-										<option value="" selected="" disabled="">Select SubCategory</option>
-										
-										
+									<label for="projectinput6">Choisir une niveau</label>
+								
+										<select id="cat_change" name="niveau" class="form-control" required>
+												<option value="" selected="" disabled="">Choisir une niveau</option>
+												<?php 
+												$sk = mysqli_query($con,"select * from subcategory where cat_id=".$sels['cat_id']."");
+												while($h = mysqli_fetch_assoc($sk))
+												{
+												?>
+												<option value="<?php echo $h['id'];?>" <?php if($h['id'] == $sels['subcat_id']) {echo 'selected';}?> > <?php echo $h['name'];?></option>
+												<?php } ?>
+												
 									</select>
+										
 								</div>
 
 								<div class="form-group">
-									<label for="cname">SubCategory Name</label>
-									<input type="text" id="cname" value="<?php echo $sels['name'];?>" class="form-control"  name="cname" required >
+									<label for="cname">Nom de Module </label>
+									<input type="text" id="cname" value="<?php echo $sels['name'];?>" class="form-control"  name="module" required >
 								</div>
 
 								
 
 								<div class="form-group">
-									<label>SubCategory Image</label>
+									<label>Image de niveau</label>
 									<input type="file" name="f_up" class="form-control-file" id="projectinput8">
 								</div>
 								
@@ -100,19 +108,19 @@ $sels = $sels->fetch_assoc();
 							<div class="form-actions">
 								
 								<button type="submit" name="up_cat" class="btn btn-raised btn-raised btn-primary">
-									<i class="fa fa-check-square-o"></i> Save
+									<i class="fa fa-check-square-o"></i> Enregistrer
 								</button>
 							</div>
 							
 							<?php 
 							if(isset($_POST['up_cat'])){
 							// $cname = mysqli_real_escape_string($con,$_POST['cname']);
-							$cid = $_POST['catname'];
+							$cid = $_POST['spec'];
 
-							$scname_ = mysqli_real_escape_string($con,$_POST['cname']);
+							$niveau = mysqli_real_escape_string($con,$_POST['niveau']);
 
 							// $scname_ = mysqli_real_escape_string($con,$_POST['cname']);
-							$subcatname=mysqli_real_escape_string($con,$_POST['subcatname']);
+							$module=mysqli_real_escape_string($con,$_POST['module']);
 							
 							echo $cid;
 							echo $scname_;
@@ -159,12 +167,12 @@ $sels = $sels->fetch_assoc();
         }
         
        $url = $uploadPath."thump_".$resizeFileName.".". $fileExt;
-$con->query("update subcategory_ set name='".$scname_."',subcat_id='".$subcatname."',img='".$url."',cat_id=".$cid." where id=".$_GET['edit']."");
+$con->query("update subcategory_ set name='".$module."',subcat_id='".$niveau."',catimg='".$url."',cat_id=".$cid." where id=".$_GET['edit']."");
  
 }
 else 
 {
-    $con->query("update subcategory_ set name='".$scname_."',subcat_id='".$subcatname."',cat_id=".$cid." where id=".$_GET['edit']."");
+    $con->query("update subcategory_ set name='".$module."',subcat_id='".$niveau."',cat_id=".$cid." where id=".$_GET['edit']."");
 }
 ?>
 						
@@ -172,7 +180,7 @@ else
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.info('SubCategory Update Successfully!!');
+    toastr.info('Mise à jour du module réussie !!');
 	setTimeout(function()
 	{
 		window.location.href="subcategorylist_.php";
@@ -196,7 +204,7 @@ else
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title" id="basic-layout-form">Add SubCategory</h4>
+					<h4 class="card-title" id="basic-layout-form">Ajouter une Module</h4>
 					
 				</div>
 				<div class="card-body">
@@ -205,9 +213,9 @@ else
 							<div class="form-body">
 								
 							<div class="form-group">
-											<label for="projectinput6">Select Category</label>
+											<label for="projectinput6">Choisir une specialité</label>
 											<select id="cat_change" name="catname" class="form-control" required>
-												<option value="" selected="" disabled="">Select Category</option>
+												<option value="" selected="" disabled="">Choisir une specialité</option>
 												<?php 
 												$sk = mysqli_query($con,"select * from category");
 												while($h = mysqli_fetch_assoc($sk))
@@ -220,22 +228,22 @@ else
 										</div>
 
 								<div class="form-group">
-									<label for="projectinput6">Select SubCategory</label>
+									<label for="projectinput6">Choisir une niveau</label>
 									<select id="sub_list" name="subcatname" class="form-control" required>
-										<option value="" selected="" disabled="">Select SubCategory</option>
+										<option value="" selected="" disabled="">Choisir une niveau</option>
 										
 									</select>
 								</div>
 								
 								<div class="form-group">
-									<label for="cname">SubCategory Name</label>
+									<label for="cname">Nom de Module </label>
 									<input type="text" id="cname" class="form-control"  name="cname" required >
 								</div>
 
 								
 
 								<div class="form-group">
-									<label>SubCategory Image</label>
+									<label>Image de niveau</label>
 									<input type="file" name="f_up" class="form-control-file" id="projectinput8">
 								</div>
 
@@ -245,7 +253,7 @@ else
 							<div class="form-actions">
 								
 								<button type="submit" name="sub_cat" class="btn btn-raised btn-raised btn-primary">
-									<i class="fa fa-check-square-o"></i> Save
+									<i class="fa fa-check-square-o"></i> Enregistrer
 								</button>
 							</div>
 							
@@ -257,8 +265,8 @@ else
 							$subcatname=mysqli_real_escape_string($con,$_POST['subcatname']);
 							$cid = $_POST['catname'];
 
-							echo $scname_;
-							echo $subcatname;
+							// echo $scname_;
+							// echo $subcatname;
 
 							// return $cid;
 							
@@ -306,7 +314,7 @@ else
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
     
-    toastr.info('Insert SubCategory Successfully!!!');
+    toastr.info('Insérer le module avec succès !!!');
    
   });
   </script>

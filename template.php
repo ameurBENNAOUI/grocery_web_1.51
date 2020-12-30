@@ -22,7 +22,7 @@ $sels = $sels->fetch_assoc();
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title" id="basic-layout-form">Edit Notification</h4>
+					<h4 class="card-title" id="basic-layout-form">Modifier la notification</h4>
 					
 				</div>
 				<div class="card-body">
@@ -39,12 +39,12 @@ $sels = $sels->fetch_assoc();
 								</div>
 
 									<div class="form-group">
-									<label for="cname">Title</label>
+									<label for="cname">Titre</label>
 									<input type="text" id="dcharge" value="<?php echo $sels['title'];?>" class="form-control"  name="title"   >
 								</div>
 
 							<div class="form-group">
-									<label for="cname">select image (optional)</label>
+									<label for="cname">sélectionner l'image (facultatif)</label>
 									<input type="file" id="dcharge"  class="form-control"  name="url"   >
 									<?php 
 									if( $sels['url'] == 'no_url')
@@ -66,7 +66,7 @@ $sels = $sels->fetch_assoc();
 
 							<div class="form-actions">
 								
-							<input type="submit" name="up_quiz" class="btn btn-raised btn-raised btn-primary" value="Save"/>
+							<input type="submit" name="up_quiz" class="btn btn-raised btn-raised btn-primary" value="Enregistrer"/>
 							</div>
 							
 							
@@ -95,7 +95,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.error('Sorry, only JPG, JPEG, PNG & GIF files are allowed.');
+    toastr.error('Désolé, seuls les fichiers JPG, JPEG, PNG et GIF sont autorisés.');
     setTimeout(function()
 	{
 		window.location.href="template.php";
@@ -123,7 +123,7 @@ $con->query("update template set message='".$msg."',title='".$title."',url='".$u
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.info('Notification Update Successfully!!');
+    toastr.info('Mise à jour de la notification réussie !!');
 	setTimeout(function()
 	{
 		window.location.href="templatelist.php";
@@ -146,7 +146,7 @@ $con->query("update template set message='".$msg."',title='".$title."',url='".$u
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title" id="basic-layout-form">Add Notification</h4>
+					<h4 class="card-title" id="basic-layout-form">Ajouter une notification</h4>
 					
 				</div>
 				<div class="card-body">
@@ -159,16 +159,16 @@ $con->query("update template set message='".$msg."',title='".$title."',url='".$u
 
 								<div class="form-group">
 									<label for="cname">Message</label>
-									<input type="text" id="cname" class="form-control" placeholder="Enter Message"  name="msg" required >
+									<input type="text" id="cname" class="form-control" placeholder="Entrez le message"  name="msg" required >
 								</div>
 								
 								<div class="form-group">
-									<label for="cname">Title</label>
-									<input type="text" id="dcharge"  class="form-control" placeholder="Enter Title"  name="title"  >
+									<label for="cname">TITRE</label>
+									<input type="text" id="dcharge"  class="form-control" placeholder="Entrez le titre"  name="title"  >
 								</div>
  
 									<div class="form-group">
-									<label for="cname">Select Image (optional)</label>
+									<label for="cname">Sélectionnez l'image (facultatif)</label>
 									<input type="file" id="dcharge"  class="form-control"   name="url"  >
 								</div>
 
@@ -181,7 +181,7 @@ $con->query("update template set message='".$msg."',title='".$title."',url='".$u
 							<div class="form-actions">
 								
 								
-								<input type="submit" name="sav_quiz" class="btn btn-raised btn-raised btn-primary" value="Save"/>
+								<input type="submit" name="sav_quiz" class="btn btn-raised btn-raised btn-primary" value="Enregistrer"/>
 							</div>
 							
 							
@@ -211,7 +211,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.error('Sorry, only JPG, JPEG, PNG & GIF files are allowed.');
+    toastr.error('Désolé, seuls les fichiers JPG, JPEG, PNG et GIF sont autorisés.');
     setTimeout(function()
 	{
 		window.location.href="template.php";
@@ -239,7 +239,7 @@ else
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.info('Insert Notification Successfully!!!');
+    toastr.info('Insérez la notification avec succès !!!');
    
   });
   </script>

@@ -21,7 +21,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Product List</h4>
+                    <h4 class="card-title">Liste de Produit</h4>
                 </div>
                 <div class="card-body collapse show">
                     <div class="card-block card-dashboard">
@@ -29,20 +29,20 @@
                         <table class="table table-striped table-bordered dom-jQuery-events">
                             <thead>
                                 <tr>
-								 <th>Sr No.</th>
-                                    <th>Product Name</th>
-                                    <th>Product Image</th>
-									<th>Product Related Image</th>
-                                    <th>Seller Name</th>
-                                    <th>Category Name</th>
-									<th>SubCategory Name</th>
-									<th>SubCategory_ Name</th>
+								 <th>ID</th>
+                                    <th>Nom de Produit</th>
+                                    <th>Image de produit</th>
+									<!-- <th>Image lieé a produi</th> -->
+                                    <!-- <th>Seller Name</th> -->
+                                    <th>Nome de specialité</th>
+									<!-- <th>Niveau</th> -->
+									<th>Nom de Module</th>
 
-                                    <th>Small Description</th>
-                                    <th>Product Range</th>
-                                    <th>Product Price</th>
-                                    <th>In Stock ?</th>
-                                    <th>Status</th>
+                                    <th>Description</th>
+                                    <th>Méthode d'impression </th>
+                                    <th>Prix</th>
+                                    <!-- <th>In Stock ?</th> -->
+                                    <!-- <th>Status</th> -->
                                     <th>Action</th>
 
                                 </tr>
@@ -59,7 +59,7 @@
                                     <td><?php echo $i;?></td>
                                     <td><?php echo $rkl['pname'];?></td>
                                     <td><img src="<?php echo $rkl['pimg'];?>" width="100" height="100"/></td>
-									<td><?php $sb = explode(',',$rkl['prel']);
+									<!-- <td><?php $sb = explode(',',$rkl['prel']);
 									
 									
 									foreach($sb as $bb)
@@ -74,11 +74,11 @@
 										<?php 
 									}
 									}
-									?></td>
-                                <td><?php echo $rkl['sname'];?></td>
+									?></td> -->
+                                <!-- <td><?php echo $rkl['sname'];?></td> -->
 								
                                 <td><?php $cat= $con->query("select * from category where id=".$rkl['cid']."")->fetch_assoc(); echo $cat['catname'];?></td>
-								<td><?php $cat= $con->query("select * from subcategory where id=".$rkl['sid']."")->fetch_assoc(); echo $cat['name'];?></td>
+								<!-- <td><?php $cat= $con->query("select * from subcategory where id=".$rkl['sid']."")->fetch_assoc(); echo $cat['name'];?></td> -->
 
 								<td><?php $cat= $con->query("select * from subcategory_ where id=".$rkl['sid_']."")->fetch_assoc(); echo $cat['name'];?></td>
 
@@ -87,8 +87,8 @@
                                 <td><?php echo substr($rkl['psdesc'],0,100).'....';?></td>    
 									<td><?php echo $rkl['pgms'];?></td>
 									<td><?php echo $rkl['pprice'];?></td>
-									<td><?php if($rkl['stock'] == 1) {echo 'Yes';}else{echo 'No';} ?></td>
-                                    <td><?php if($rkl['status'] == 1) {echo 'Publish';}else{echo 'Unpublish';} ?></td>
+									<!-- <td><?php if($rkl['stock'] == 1) {echo 'Yes';}else{echo 'No';} ?></td> -->
+                                    <!-- <td><?php if($rkl['status'] == 1) {echo 'Publish';}else{echo 'Unpublish';} ?></td> -->
                                     <td>
 									<a class="primary" href="product.php?edit=<?php echo $rkl['id'];?>" data-original-title="" title="">
                                             <i class="ft-edit font-medium-3"></i>
@@ -121,7 +121,7 @@ $con->query("delete from product  where id=".$_GET['dele']."");
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.error('selected product deleted successfully.');
+    toastr.error('le produit sélectionné a bien été supprimé.');
     setTimeout(function()
 	{
 		window.location.href="productlist.php";

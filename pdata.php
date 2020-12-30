@@ -10,20 +10,20 @@ $user = $con->query("select * from user where id=".$c['uid']."")->fetch_assoc();
  
 
 ?>
-<input type='button' id='btn' class="btn btn-primary text-right" value='Print' onclick='printDiv();' style="float:right;">
+<input type='button' id='btn' class="btn btn-primary text-right" value='Impression' onclick='printDiv();' style="float:right;">
 <div id="divprint">
-<h5><b>Order Id :- <?php echo $pid;?></b></h5>
-<h5><b>Customer Name :- <?php echo $uinfo['name'];?></b></h5>
-<h5><b>Customer Mobile :- <?php echo $user['mobile'];?></b></h5>
-<h5><b>Address :- <?php echo $uinfo['hno'].','.$uinfo['society'].','.$uinfo['area'].'-'.$uinfo['pincode'];?></b></h5>
-<h5><b>Landmark:- <?php echo $uinfo['landmark'];?></b></h5>
+<h5><b>Commande ID :- <?php echo $pid;?></b></h5>
+<h5><b>Nom du client :- <?php echo $uinfo['name'];?></b></h5>
+<h5><b>Mobile client :- <?php echo $user['mobile'];?></b></h5>
+<h5><b>Addresse :- <?php echo $uinfo['hno'].','.$uinfo['society'].','.$uinfo['area'].'-'.$uinfo['pincode'];?></b></h5>
+<!-- <h5><b>Landmark:- <?php echo $uinfo['landmark'];?></b></h5> -->
 
-<h5><b>Payment Method :- <?php echo $c['p_method'];?></b></h5>
+<h5><b>Mode de paiement :- <?php echo $c['p_method'];?></b></h5>
 
-<h5><b>Delivery Date :- <?php echo str_replace('--','',$c['ddate']);?></b></h5>
-<h5><b>Delivery Slot :- <?php echo $c['timesloat'];?></b></h5>
+<h5><b>Date de livraison :- <?php echo str_replace('--','',$c['ddate']);?></b></h5>
+<!-- <h5><b>Delivery Slot :- <?php echo $c['timesloat'];?></b></h5> -->
 <?php 
-if($c['p_method'] == 'Cash on delivery' or $c['p_method'] == 'Cash On Delivery' or $c['p_method'] == 'Pickup myself' or $c['p_method'] == 'Pickup Myself')
+if( $c['p_method'] == 'Payez maintenant' or $c['p_method'] == 'Ramasse moi-même')
 {
 }
 else
@@ -36,14 +36,14 @@ else
 <div class="table-responsive">
 <table class="table">
 <tr>
-<th>Sr No.</th>
-<th>Prodct Name</th>
-<th>Prodct Image</th>
-<th>Discount</th>
-<th>Prodct Type</th>
-<th>Prodct Price</th>
-<th>Product Qty</th>
-<th>Product Total</th>
+<th>ID</th>
+<th>Nom de Cours</th>
+<th>Image de Cours</th>
+<th>Remise</th>
+<th>Impression methode</th>
+<th>Prix</th>
+<th>Qty</th>
+<th>Totale</th>
 </tr>
 <?php 
 $prid = explode('$;',$c['pid']);
@@ -88,42 +88,36 @@ $coupon = $c['cou_amt'];
 ?>
 <ul class="list-group">
   <li class="list-group-item">
-    <span class="badge bg-primary float-right budge-own" ><?php echo $c['p_method'];?></span> Payment Method
+    <span class="badge bg-primary float-right budge-own" ><?php echo $c['p_method'];?></span> Mode de paiement
   </li>
   <li class="list-group-item">
-    <span class="badge bg-info float-right budge-own" ><?php echo $subtotal?></span> Sub Total Price
+    <span class="badge bg-info float-right budge-own" ><?php echo $subtotal?></span> Prix sous-total
   </li>
   
    <li class="list-group-item">
-    <span class="badge bg-info float-right budge-own" ><?php echo $tax;?></span> Tax
+    <span class="badge bg-info float-right budge-own" ><?php echo $tax;?></span> Taxe
   </li>
-  <?php 
-  if($coupon != 0)
-  {
-  ?>
-   <li class="list-group-item">
-    <span class="badge bg-info float-right budge-own" ><?php echo $coupon;?></span> Coupon Discount
-  </li>
-  <?php } ?>
+ 
   
   <?php 
   if($wallet != 0)
   {
   ?>
    <li class="list-group-item">
-    <span class="badge bg-info float-right budge-own" ><?php echo $wallet;?></span> Wallet
+    <span class="badge bg-info float-right budge-own" ><?php echo $wallet;?></span> Total Montant client
+
   </li>
   <?php } ?>
   
   <li class="list-group-item">
-    <span class="badge bg-info float-right budge-own" ><?php echo $c['total']- (($subtotal+$tax) - ($coupon + $wallet));?></span> Delivery Charge
+    <span class="badge bg-info float-right budge-own" ><?php echo $c['total']- (($subtotal+$tax) - ($coupon + $wallet));?></span> Frais de livraison
   </li>
   
    <li class="list-group-item">
-    <span class="badge bg-info float-right budge-own" ><?php echo $c['total'];?></span> Net Amount
+    <span class="badge bg-info float-right budge-own" ><?php echo $c['total'];?></span> Amounte
   </li>
   <li class="list-group-item">
-    <span class="badge bg-warning float-right budge-own" ><?php echo $c['status'];?></span> Order Status
+    <span class="badge bg-warning float-right budge-own" ><?php echo $c['status'];?></span> Statut de la commande
   </li>
  
 </ul>

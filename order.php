@@ -155,15 +155,15 @@ else
                         <table class="table table-striped" id="example">
                             <thead>
                                 <tr>
-								 <th>Sr No.</th>
+								 <th>ID</th>
                                     <th>Date</th>
-                                     <th>Order ID</th>
-									  <th>Delivery Boy Name</th>
-									  <th>Delivery Boy Assign Status</th>
-									   <th>Delivery Boy Delivery Status</th>
-                                     <th>Status</th>
-                                     <th>Preview</th>
-									 <th>Assign?</th>
+                                     <th>ID de commande</th>
+									  <!-- <th>Delivery Boy Name</th> -->
+									  <!-- <th>Delivery Boy Assign Status</th> -->
+									   <!-- <th>Delivery Boy Delivery Status</th> -->
+                                     <th>Statut</th>
+                                     <th>Aperçu</th>
+									 <!-- <th>Assign?</th> -->
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -182,16 +182,16 @@ else
                                     <td><?php echo $row['order_date'];?></td>
 									
                                     <td><?php echo $row['id'];?></td>
-                                   <td><?php $rdata = $con->query("select * from rider where id=".$row['rid']."")->fetch_assoc(); if($rdata['name'] == '') {echo '';}else {echo $rdata['name'];}?>
-                                    <td><?php if($row['a_status'] == 0){echo 'Not Assign';}else if($row['a_status'] == 1){echo 'Assign';}else if($row['a_status'] == 2) {echo 'Accepted';}else if($row['a_status'] == 3){echo 'Completed';}else if($row['a_status'] == 4){echo 'Cancelled';} else 
-										{echo 'Rejected';}?></td>
-										<td><?php
+                                   <!-- <td><?php $rdata = $con->query("select * from rider where id=".$row['rid']."")->fetch_assoc(); if($rdata['name'] == '') {echo '';}else {echo $rdata['name'];}?> -->
+                                    <!-- <td><?php if($row['a_status'] == 0){echo 'Not Assign';}else if($row['a_status'] == 1){echo 'Assign';}else if($row['a_status'] == 2) {echo 'Accepted';}else if($row['a_status'] == 3){echo 'Completed';}else if($row['a_status'] == 4){echo 'Cancelled';} else 
+										{echo 'Rejected';}?></td> -->
+										<!-- <td><?php
                                    echo $row['r_status'];
-										?></td>
+										?></td> -->
 									<td><?php echo ucfirst($row['status']);?></td>
                                     								   <td>
-								  <button class="preview_d btn btn-primary shadow-z-2" data-id="<?php echo $row['id'];?>" data-toggle="modal" data-target="#myModal">Preview</button></td>
-								<td>
+								  <button class="preview_d btn btn-primary shadow-z-2" data-id="<?php echo $row['id'];?>" data-toggle="modal" data-target="#myModal">Aperçu</button></td>
+								<!-- <td>
 								<?php if($row['p_method'] !='Pickup Myself') {?>
 								<?php if($row['a_status'] == 0) {
 
@@ -216,14 +216,14 @@ else
 <p>Pickup My Self</p>
 <?php 
 									}?>
-</td>								
+</td>								 -->
 								  
                                     <td>
 								
 									<?php if($row['p_method'] =='Pickup Myself' and $row['status'] != 'completed' and $row['status'] != 'cancelled') {?>
-                  <a href="?status=completed&id=<?php echo $row['id'];?>"><button class="btn shadow-z-2 btn-success" >Make Completed</button></a>
+                  <a href="?status=completed&id=<?php echo $row['id'];?>"><button class="btn shadow-z-2 btn-success" >Rendre Terminé</button></a>
                 <?php } ?>
-									 <a href="?dele=<?php echo $row['id'];?>"><button class="btn shadow-z-2 btn-danger gradient-pomegranate">Delete</button></a>
+									 <a href="?dele=<?php echo $row['id'];?>"><button class="btn shadow-z-2 btn-danger gradient-pomegranate">Supprimer</button></a>
 										</td>
                                    
                                 </tr>
@@ -250,7 +250,7 @@ $id = $_GET['id'];
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.info('Order Status Update Successfully!!');
+    toastr.info('Mise à jour du statut de la commande réussie !!');
 	setTimeout(function()
 	{
 		window.location.href="order.php";
@@ -268,7 +268,7 @@ $con->query("delete from orders where id=".$_GET['dele']."");
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.error('selected order deleted successfully.');
+    toastr.error('la commande sélectionnée a bien été supprimée.');
     setTimeout(function()
 	{
 		window.location.href="order.php";
@@ -299,7 +299,7 @@ $con->query("delete from orders where id=".$_GET['dele']."");
     
     <div class="modal-content">
       <div class="modal-header">
-        <h4>Order Preivew</h4>
+        <h4>Aperçu de la commande</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body p_data">

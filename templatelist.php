@@ -23,7 +23,7 @@ define('ONE_HASH',$getkey['one_hash']);
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Notification List</h4>
+                    <h4 class="card-title">Liste des notifications</h4>
                 </div>
                 <div class="card-body collapse show">
                     <div class="card-block card-dashboard">
@@ -31,8 +31,8 @@ define('ONE_HASH',$getkey['one_hash']);
                         <table class="table table-striped table-bordered dom-jQuery-events">
                             <thead>
                                 <tr>
-								 <th>Sr No.</th>
-                                    <th>Title</th>
+								 <th>ID</th>
+                                    <th>Titre</th>
                                      <th>Message</th>
                                     <th>Image</th>
                                     <th>Action</th>
@@ -96,7 +96,7 @@ $con->query("delete from template where id=".$_GET['dele']."");
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.error('selected notification deleted successfully.');
+    toastr.error('notification sélectionnée supprimée avec succès.');
     setTimeout(function()
 	{
 		window.location.href="templatelist.php";
@@ -152,7 +152,7 @@ $con->query("delete from template where id=".$_GET['dele']."");
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.info('Notification Send Successfully!!!');
+    toastr.info('Notification Envoyer avec succès !!!');
    setTimeout(function()
 	{
 		window.location.href="templatelist.php";

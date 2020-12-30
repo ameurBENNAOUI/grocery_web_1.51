@@ -22,7 +22,7 @@
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title" id="basic-layout-form">Add Banner</h4>
+					<h4 class="card-title" id="basic-layout-form">Ajouter une Banniére</h4>
 					
 				</div>
 				<div class="card-body">
@@ -40,15 +40,15 @@
 
 								
 								<div class="form-group">
-									<label for="cname">Banner Image</label>
-									<input type="file" id="pimg" class="form-control"  placeholder="Enter Banner Image" name="pimg">
+									<label for="cname">IMAGE DE LA BANNIÈRE</label>
+									<input type="file" id="pimg" class="form-control"  placeholder="Entrez l'image de la bannière" name="pimg">
 									<img src="<?php echo $bdata['bimg'];?>" width="100" height="100"/>
 								</div>
 								
                                 		<div class="form-group">
-									<label for="cname">Link With Category?(Optional)</label>
+									<label for="cname">Lien avec la spécialité? (Facultatif)</label>
 									<select class="form-control" name="scat">
-									    <option value="0">Select A Category</option>
+									    <option value="0">Choisissez une spécialité</option>
 									    <?php
 									    $sp = $con->query("select * from category");
 									    while($roc = $sp->fetch_assoc())
@@ -66,7 +66,7 @@
 							<div class="form-actions">
 								
 								<button type="submit" name="edit_product" class="btn btn-raised btn-raised btn-primary">
-									<i class="fa fa-check-square-o"></i> Update Banner
+									<i class="fa fa-check-square-o"></i> Mettre à jour la bannière
 								</button>
 							</div>
 						</form>
@@ -88,7 +88,7 @@ if($_FILES["pimg"]["name"] == '')
 		 <script type="text/javascript">
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
-    toastr.info('Update Banner Successfully!!!');
+    toastr.info('Mettre à jour la bannière avec succès !!!');
     setTimeout(function()
 	{
 		window.location.href="bannerlist.php";
@@ -106,7 +106,7 @@ else
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.error('Sorry, only JPG, JPEG, PNG  files are allowed.');
+    toastr.error('Désolé, seuls les fichiers JPG, JPEG et PNG sont autorisés.');
     setTimeout(function()
 	{
 		window.location.href="banner.php?edit=<?php echo $_GET['edit'];?>";
@@ -124,7 +124,7 @@ else
 		 <script type="text/javascript">
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
-    toastr.info('Update Banner Successfully!!!');
+    toastr.info('Mettre à jour la bannière avec succès !!!');
     setTimeout(function()
 	{
 		window.location.href="bannerlist.php";
@@ -150,14 +150,14 @@ else
 
 								
 								<div class="form-group">
-									<label for="cname">Banner Image</label>
-									<input type="file" id="pimg" class="form-control"  placeholder="Enter Banner Image" name="pimg" required>
+									<label for="cname">IMAGE DE LA BANNIÈRE</label>
+									<input type="file" id="pimg" class="form-control"  placeholder="Entrez l'image de la bannière" name="pimg" required>
 								</div>
 								
                                 		<div class="form-group">
-									<label for="cname">Link With Category?(Optional)</label>
+									<label for="cname">Lien avec la spécialité? (Facultatif)</label>
 									<select class="form-control" name="scat">
-									    <option value="0">Select A Category</option>
+									    <option value="0">Choisissez une spécialité</option>
 									    <?php
 									    $sp = $con->query("select * from category");
 									    while($roc = $sp->fetch_assoc())
@@ -175,7 +175,7 @@ else
 							<div class="form-actions">
 								
 								<button type="submit" name="sub_product" class="btn btn-raised btn-raised btn-primary">
-									<i class="fa fa-check-square-o"></i> Save Banner
+									<i class="fa fa-check-square-o"></i> Enregistrer la bannière
 								</button>
 							</div>
 						</form>
@@ -200,7 +200,7 @@ $cid = $_POST['scat'];
 		 <script type="text/javascript">
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
-    toastr.info('Insert New Banner Successfully!!!');
+    toastr.info('Insérer une nouvelle bannière avec succès !!!');
   });
   </script>
 		<?php 

@@ -45,7 +45,7 @@ $sels = $sels->fetch_assoc();
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title" id="basic-layout-form">Edit SubCategory</h4>
+					<h4 class="card-title" id="basic-layout-form">Modifier la niveau</h4>
 					
 				</div>
 				<div class="card-body">
@@ -55,9 +55,9 @@ $sels = $sels->fetch_assoc();
 								
 
 								<div class="form-group">
-									<label for="cname">Select A Category</label>
+									<label for="cname">Choisissez une specialité</label>
 									<select name="scat" class="form-control">
-									<option value="">select a category</option>
+									<option value="">choisissez une specialité</option>
 									<?php 
 									$sel = $con->query("select * from category");
 									while($rs = $sel->fetch_assoc())
@@ -71,14 +71,14 @@ $sels = $sels->fetch_assoc();
 								</div>
 
 								<div class="form-group">
-									<label for="cname">SubCategory Name</label>
+									<label for="cname">Nom de niveau</label>
 									<input type="text" id="cname" value="<?php echo $sels['name'];?>" class="form-control"  name="cname" required >
 								</div>
 
 								
 
 								<div class="form-group">
-									<label>SubCategory Image</label>
+									<label>Image de niveau</label>
 									<input type="file" name="f_up" class="form-control-file" id="projectinput8">
 								</div>
 								
@@ -92,7 +92,7 @@ $sels = $sels->fetch_assoc();
 							<div class="form-actions">
 								
 								<button type="submit" name="up_cat" class="btn btn-raised btn-raised btn-primary">
-									<i class="fa fa-check-square-o"></i> Save
+									<i class="fa fa-check-square-o"></i> Enregistrer
 								</button>
 							</div>
 							
@@ -155,7 +155,7 @@ else
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.info('SubCategory Update Successfully!!');
+    toastr.info('Mise à jour de la niveau réussie !!');
 	setTimeout(function()
 	{
 		window.location.href="subcategorylist.php";
@@ -179,7 +179,7 @@ else
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title" id="basic-layout-form">Add SubCategory</h4>
+					<h4 class="card-title" id="basic-layout-form">Ajouter une Niveau</h4>
 					
 				</div>
 				<div class="card-body">
@@ -190,9 +190,9 @@ else
 
 								
 <div class="form-group">
-									<label for="cname">Select A Category</label>
+									<label for="cname">Select une specialité</label>
 									<select name="scat" class="form-control" required>
-									<option value="">select a category</option>
+									<option value="">Select une specialité</option>
 									<?php 
 									$sel = $con->query("select * from category");
 									while($rs = $sel->fetch_assoc())
@@ -206,14 +206,14 @@ else
 								</div>
 								
 								<div class="form-group">
-									<label for="cname">SubCategory Name</label>
+									<label for="cname">Nom de niveau</label>
 									<input type="text" id="cname" class="form-control"  name="cname" required >
 								</div>
 
 								
 
 								<div class="form-group">
-									<label>SubCategory Image</label>
+									<label>Image de niveau</label>
 									<input type="file" name="f_up" class="form-control-file" id="projectinput8">
 								</div>
 
@@ -223,7 +223,7 @@ else
 							<div class="form-actions">
 								
 								<button type="submit" name="sub_cat" class="btn btn-raised btn-raised btn-primary">
-									<i class="fa fa-check-square-o"></i> Save
+									<i class="fa fa-check-square-o"></i> Enregistrer
 								</button>
 							</div>
 							
@@ -276,7 +276,7 @@ $con->query("insert into subcategory(`cat_id`,`name`,`img`)values(".$cid.",'".$c
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
     
-    toastr.info('Insert SubCategory Successfully!!!');
+    toastr.info('Insérez la niveau avec succès !!!');
    
   });
   </script>

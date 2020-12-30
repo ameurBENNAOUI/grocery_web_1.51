@@ -21,7 +21,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">SubCategory List</h4>
+                    <h4 class="card-title">Niveaux Liste</h4>
                 </div>
                 <div class="card-body collapse show">
                     <div class="card-block card-dashboard">
@@ -29,11 +29,11 @@
                         <table class="table table-striped table-bordered dom-jQuery-events">
                             <thead>
                                 <tr>
-								 <th>Sr No.</th>
-								 <th>Category Name</th>
-                                    <th>SubCategory Name</th>
-                                    <th>SubCategory Image</th>
-									<th>Total Product</th>
+								 <th>ID</th>
+								 <th>Nom de spécialité</th>
+                                    <th>Nom de Niveau</th>
+                                    <th>Image de Niveau</th>
+									<th>Total des Modules</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -52,7 +52,7 @@
 									<td><?php $cname = $con->query("select * from category where id=".$row['cat_id']."")->fetch_assoc(); echo $cname['catname']; ?>
                                     <td><?php echo $row['name'];?></td>
                                     <td><img class="media-object round-media" src="<?php echo $row['img'];?>" alt="Generic placeholder image" style="height: 75px;"></td>
-                                    <td><?php echo $con->query("select * from product where sid=".$row['id']."")->num_rows;?></td>
+                                    <td><?php echo $con->query("select * from subcategory_ where subcat_id=".$row['id']."")->num_rows;?></td>
 									<td>
 									<a class="primary"  href="subcategory.php?edit=<?php echo $row['id'];?>" data-original-title="" title="">
                                             <i class="ft-edit font-medium-3"></i>

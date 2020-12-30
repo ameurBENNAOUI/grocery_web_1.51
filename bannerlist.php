@@ -21,7 +21,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Banner List</h4>
+                    <h4 class="card-title">Liste des bannières</h4>
                 </div>
                 <div class="card-body collapse show">
                     <div class="card-block card-dashboard">
@@ -29,10 +29,10 @@
                         <table class="table table-striped table-bordered dom-jQuery-events">
                             <thead>
                                 <tr>
-								 <th>Sr No.</th>
+								 <th>ID</th>
                                    
-                                    <th>Banner Image</th>
-                                   <th>Banner Category</th>
+                                    <th>Image de bannière</th>
+                                   <th>Spécialité de bannière</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -83,7 +83,7 @@ if(isset($_GET['dele']))
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.error('selected banner deleted successfully.');
+    toastr.error('la bannière sélectionnée a bien été supprimée.');
    setTimeout(function()
 	{
 		window.location.href="bannerlist.php";
