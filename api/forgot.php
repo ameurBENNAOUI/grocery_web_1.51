@@ -3,7 +3,7 @@ require 'db.php';
 $data = json_decode(file_get_contents('php://input'), true);
 if($data['email'] == '' or $data['ccode'] == '')
 {
-    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went Wrong!");
+    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé!");
 }
 else
 {
@@ -12,11 +12,11 @@ else
     if($search->num_rows != 0)
     {
         
- $returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Otp Send Successfully!!!");
+ $returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Otp envoyer avec succès !!!");
     }
     else
   {
-      $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Mobile Number Not Registered!!");
+      $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Numéro de portable non enregistré !!");
   }
 }
 echo json_encode($returnArr);

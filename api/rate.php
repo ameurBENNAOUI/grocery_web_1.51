@@ -3,7 +3,7 @@ require 'db.php';
 $data = json_decode(file_get_contents('php://input'), true);
 if($data['uid'] == ''  or $data['rate'] == '' or $data['oid'] == '')
 {
-    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went Wrong!");
+    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé!");
 }
 else
 {
@@ -14,7 +14,7 @@ else
 
 $con->query("insert into rate_order(`uid`,`msg`,`rate`,`oid`)values(".$uid.",'".$msg."',".$rate.",'".$oid."')");
     $con->query("update orders set rate=1 where id=".$oid." and uid=".$uid."");
-     $returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Order Rate Submitted Successfully!");
+     $returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Taux de commande soumis avec succès!");
         
 }
 echo json_encode($returnArr);

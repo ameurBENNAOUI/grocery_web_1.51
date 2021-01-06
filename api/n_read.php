@@ -7,7 +7,7 @@ $nid = $data['nid'];
 
 if ($uid == '' or $nid == '')
 {
-$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went wrong  try again !");
+$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé essaie encore !");
 }
 else 
 {
@@ -15,7 +15,7 @@ else
 	if($sel != 0 )
 	{
 	    
-	    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Notification Already Read!!");
+	    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Notification déjà lue !!");
 	    
 		
 		
@@ -31,7 +31,7 @@ $remain = $con->query("select * from noti where date >='".$date_time."'")->num_r
 	$read = $con->query("select * from uread where uid=".$uid."")->num_rows;
 	$r_noti = $remain - $read;
 	    
-		$returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"notification read Successfully!","Remain_notification"=>$r_noti);
+		$returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"notification lu avec succès!","Remain_notification"=>$r_noti);
 	}
 }
 echo json_encode($returnArr);

@@ -3,7 +3,7 @@ require 'db.php';
 $data = json_decode(file_get_contents('php://input'), true);
 if($data['uid'] == '')
 {
- $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went Wrong!");    
+ $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé!");    
 }
 else
 {
@@ -41,7 +41,7 @@ while($row = $user->fetch_assoc())
 
 
 if ($row["wallet"]<floatval($wal_amt) and $p_method!="Ramasse moi-même"){
-    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"You have Insuffisant credit");    
+    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Vous avez un crédit insuffisant");    
     // echo json_encode($returnArr);
 }
 else{
@@ -71,7 +71,7 @@ else{
     $con->query("update user set wallet=wallet-".$wal_amt." where id=".$uid."");
     }
 	
-    $returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Order Placed Successfully!!!");
+    $returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Commande passée avec succès !!!");
     }
     
     echo json_encode($returnArr);

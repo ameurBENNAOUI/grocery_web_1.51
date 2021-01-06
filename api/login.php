@@ -3,7 +3,7 @@ require 'db.php';
 $data = json_decode(file_get_contents('php://input'), true);
 if($data['mobile'] == ''  or $data['password'] == '')
 {
-    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went Wrong!");
+    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé!");
 }
 else
 {
@@ -22,22 +22,22 @@ if($chek->num_rows != 0)
 
     // $dc = $con->query("select * from area_db where name='".$c['area']."'");
     // $vb = $dc->fetch_assoc();
-    // $returnArr = array("user"=>$c,"d_charge"=>$vb['dcharge'],"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Login successfully!");
+    // $returnArr = array("user"=>$c,"d_charge"=>$vb['dcharge'],"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Connectez-vous avec succès!");
 
     // $dc = $con->query("select * from area_db where name='".$c['area']."'");
     // $vb = $dc->fetch_assoc();
-    $returnArr = array("user"=>$c,"d_charge"=>null,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Login successfully!");
+    $returnArr = array("user"=>$c,"d_charge"=>null,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Connectez-vous avec succès!");
 
 
 }
 else
 {
-    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Invalid Email/Mobile No or Password!!!");
+    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Email / numéro de portable ou mot de passe invalide !!!");
 }
 }
 else  
 {
-	 $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Your Status Deactivate!!!");
+	 $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Votre statut est désactivé !!!");
 }
 }
 

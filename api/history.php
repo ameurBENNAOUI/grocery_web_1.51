@@ -3,7 +3,7 @@ require 'db.php';
 $data = json_decode(file_get_contents('php://input'), true);
 if($data['uid'] == '')
 {
- $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went Wrong!");    
+ $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé!");    
 }
 else
 {
@@ -31,11 +31,11 @@ else
       $po[] = $g;
       
   }
-  $returnArr = array("Data"=>$po,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Order History  Get Successfully!!!");
+  $returnArr = array("Data"=>$po,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"L'historique des commandes est réussi !!!");
   }
   else 
   {
-	  $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Order  Not Found!!!");
+	  $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Commande introuvable !!!");
   }
 }
 echo json_encode($returnArr);

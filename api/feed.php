@@ -3,7 +3,7 @@ require 'db.php';
 $data = json_decode(file_get_contents('php://input'), true);
 if($data['uid'] == '' or $data['msg'] == '' or $data['rate'] == '')
 {
-    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went Wrong!");
+    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé!");
 }
 else
 {
@@ -12,7 +12,7 @@ else
     $rate = strip_tags(mysqli_real_escape_string($con,$data['rate']));
 
     $con->query("insert into feedback(`uid`,`msg`,`rate`)values(".$uid.",'".$msg."',".$rate.")");
-     $returnArr = array("user"=>$c,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Feedback Submitted Successfully!");
+     $returnArr = array("user"=>$c,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Feedback soumis avec succès!!");
         
 }
 echo json_encode($returnArr);

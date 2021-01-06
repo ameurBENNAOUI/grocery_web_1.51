@@ -14,7 +14,7 @@ $name = $data['name'];
 
 if($area == '' or $hno == '' or $society == '' or $pincode == '' or $aid == '' or $type == '' or $name == '')
 {
-	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went wrong  try again !");
+	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé essaie encore !");
 }
 else 
 {
@@ -24,7 +24,7 @@ else
 	if($aid == 0)
 	{
 	$con->query("insert into address(`uid`,`hno`,`society`,`pincode`,`area`,`landmark`,`type`,`name`)values(".$uid.",'".$hno."','".$society."',".$pincode.",'".$area."','".$landmark."','".$type."','".$name."')");
-	$returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Address Saved Successfully!!!");
+	$returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Adresse enregistrée avec succès !!!");
 	}
 	else 
 	{
@@ -53,12 +53,12 @@ else
 		$p['status'] = $adata['status'];
 		$p['name'] = $adata['name'];
 		
-		$returnArr = array("Address"=>$p,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Address Updated Successfully!!!");
+		$returnArr = array("Address"=>$p,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Adresse mise à jour avec succès !!!");
 	}
 	}
 	else 
 	{
-		$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"User Either Not Exit OR Deactivated From Admin!");
+		$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"L'utilisateur n'est pas sorti OU désactivé par l'administrateur!");
 	}
 }
 echo json_encode($returnArr);

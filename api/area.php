@@ -6,6 +6,6 @@ while($row = $sel->fetch_assoc())
 {
     $myarray[] = $row;
 }
-$returnArr = array("data"=>$myarray,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Area List Founded!");
+$returnArr = array("data"=>$myarray,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Liste des zones fondée!");
 echo json_encode($returnArr);
 ?>

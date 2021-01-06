@@ -5,7 +5,7 @@ $data = json_decode(file_get_contents('php://input'), true);
 $uid = $data['uid'];
 if($uid == '')
 {
-	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went wrong  try again !");
+	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé essaie encore !");
 }
 else 
 {
@@ -45,7 +45,7 @@ else
 }
 else 
 {
-	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Address Not Found!!");
+	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Adresse introuvable!!");
 }
 }
 echo json_encode($returnArr);

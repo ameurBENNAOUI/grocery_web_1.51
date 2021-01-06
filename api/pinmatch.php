@@ -7,7 +7,7 @@ $pin = $data['pin'];
 $password = $data['password'];
 if ($pin =='' or $password =='')
 {
-$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went wrong  try again !");
+$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé essaie encore !");
 }
 else 
 {
@@ -22,11 +22,11 @@ else
     if($counter->num_rows != 0)
     {
      $con->query("update user set password='".$password."' where mobile='".$pin."'");
-     $returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Password Changed Successfully!!!!!");    
+     $returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Le mot de passe a été changé avec succès!!!!!");    
     }
     else
     {
-     $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"mobile Not Matched!!!!");  
+     $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"mobile non assorti !!!!");  
     }
 }
 

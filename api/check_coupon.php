@@ -6,7 +6,7 @@ $uid  = $data['uid'];
 $cid  = $data['cid'];
 if($uid == '' or $cid == '')
 {
-	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went Wrong!");
+	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé!");
 }
 else 
 {

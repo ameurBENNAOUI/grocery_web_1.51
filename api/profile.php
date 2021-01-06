@@ -5,7 +5,7 @@ $data = json_decode(file_get_contents('php://input'), true);
 if($data['name'] == '' or $data['email'] == '' or $data['mobile'] == '' or $data['imei']==''  or $data['password'] == '' or $data['ccode'] == '')
 {
     
-    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went Wrong!");
+    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé!");
 }
 else
 {
@@ -27,13 +27,13 @@ if($checkimei != 0)
             $c = $c->fetch_assoc();
             $dc = $con->query("select * from area_db where name='".$c['area']."'");
             $dc = $dc->fetch_assoc();
-        $returnArr = array("user"=>$c,"d_charge"=>$dc['dcharge'],"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Profile Update successfully!");
+        $returnArr = array("user"=>$c,"d_charge"=>$dc['dcharge'],"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Mise à jour du profil réussie!");
         
     
 	}
     else
     {
-      $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Request To Update Own Device!!!!");  
+      $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Demande de mise à jour de votre appareil !!!!");  
     }
     
 }

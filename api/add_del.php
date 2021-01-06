@@ -8,7 +8,7 @@ $aid = $data['aid'];
 
 if($uid == '' or $aid == '')
 {
-	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went wrong  try again !");
+	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé essaie encore !");
 }
 else 
 {
@@ -23,12 +23,12 @@ else
 		}
 		else 
 		{
-			$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Sorry You Not Delete Someone Address!!");
+			$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Désolé vous n'avez pas supprimé l'adresse de quelqu'un !!");
 		}
 	}
 	else 
 	{
-		$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"User Either Not Exit OR Deactivated From Admin!");
+		$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"L'utilisateur n'est pas sorti OU désactivé par l'administrateur!");
 	}
 }
 echo json_encode($returnArr);

@@ -41,11 +41,11 @@ if($data['cid'] != '' or $data['sid'] != '' or $data['pid'] != '')
 	$result['discount'] = $row['discount'];
     $pp[] = $result;
     }
-    $returnArr = array("data"=>$pp,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Product List Get successfully!");
+    $returnArr = array("data"=>$pp,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Liste de course Obtenez avec succès!");
     }
     else
     {
-        $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Product  Not Found!");
+        $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Coure non trouvé!");
     }
 echo json_encode($returnArr);
 }

@@ -6,7 +6,7 @@ $uid = $data['uid'];
 
 if ($uid == '')
 {
-$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went wrong  try again !");
+$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé essaie encore !");
 }
 else 
 	{
@@ -29,11 +29,11 @@ while($row = $sel->fetch_assoc())
     $myarray['IS_READ'] = $count;
     $p[] = $myarray;
 }
-$returnArr = array("data"=>$p,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Notification List Founded!");
+$returnArr = array("data"=>$p,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Liste des notifications créée!");
 }
 else 
 {
-	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Notification Not Founded!!");
+	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Notification non fondée !!");
 }
 	}
 echo json_encode($returnArr);

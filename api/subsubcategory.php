@@ -3,7 +3,7 @@ require 'db.php';
 $data = json_decode(file_get_contents('php://input'), true);
 if($data['category_id'] == '' or $data['subcategory_id'] == '' )
 {
-    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went Wrong!");
+    $returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé!");
 }
 else
 {
@@ -25,11 +25,11 @@ while($row = $sel->fetch_assoc())
 		$p['count'] = $con->query("select * from product where ssid=".$row['id']." ")->num_rows;
 		$myarray[] = $p;
 }
-$returnArr = array("data"=>$myarray,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Subcategory List Founded!");
+$returnArr = array("data"=>$myarray,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Sous-liste des catégories fondées!");
 }
 else 
 {
-$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"SubCategory Not Found!!!");	
+$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Sous-catégorie introuvable !!!");	
 }
 }
 echo json_encode($returnArr);

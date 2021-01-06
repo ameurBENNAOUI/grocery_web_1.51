@@ -26,7 +26,7 @@ if ($data["st"]=="c0"){
 		$p['count'] = $con->query("select * from subcategory where cat_id=".$row['id']."")->num_rows;
 		$myarray[] = $p;
 	}
-	$returnArr = array("data"=>$myarray,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Category List Founded!","st"=>"c1","idc"=>0);
+	$returnArr = array("data"=>$myarray,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Liste des catégories fondée!","st"=>"c1","idc"=>0);
 	echo json_encode($returnArr);
 
 
@@ -37,7 +37,7 @@ elseif ($data["st"]=="c1"){
 	
 	if($data['purview'] == '')
 	{
-		$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went Wrong!");
+		$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé!");
 	}
 	else
 	{
@@ -55,7 +55,7 @@ elseif ($data["st"]=="c1"){
 			$p['count']=5;
 			$myarray[] = $p;
 		}
-		$returnArr = array("data"=>$myarray,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Category List Founded!","st"=>"c2","idc"=>$cat_id );
+		$returnArr = array("data"=>$myarray,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Liste des catégories fondée!","st"=>"c2","idc"=>$cat_id );
 		echo json_encode($returnArr);
 		// $sel = $con->query("select * from subcategory where cat_id=".$cat_id." ");
 		// $count = $con->query("select * from subcategory where cat_id=".$cat_id." ")->num_rows;
@@ -71,7 +71,7 @@ elseif ($data["st"]=="c1"){
 		// 			$p['count'] = $con->query("select * from product where sid=".$row['id']."")->num_rows;
 		// 			$myarray[] = $p;
 		// 	}
-		// 	$returnArr = array("data"=>$myarray,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Subcategory List Founded!","st"=>"c1","idc"=>$cat_id);
+		// 	$returnArr = array("data"=>$myarray,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"SubListe des catégories fondée!","st"=>"c1","idc"=>$cat_id);
 		// }
 		// else 
 		// {

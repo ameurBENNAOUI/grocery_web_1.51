@@ -4,9 +4,12 @@ require 'db.php';
 $data = json_decode(file_get_contents('php://input'), true);
  
 $uid = $data['uid'];
+
+
+
 if($uid == '')
 {
-	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went wrong  try again !");
+	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé essaie encore !");
 }
 else 
 { 
@@ -35,8 +38,8 @@ $result = array();
 $prod = $con->query("select * from product where cid=0 and sid=0 and sid_=0 and status=1  order by id desc limit 5 ");
 	while($row = $prod->fetch_assoc())
 	{
-		$result['id'] = $row['id'];
-		$result['cat_id'] = $row['cid'];
+	$result['id'] = $row['id'];
+	$result['cat_id'] = $row['cid'];
 	$result['subcat_id'] = $row['sid'];
     $result['product_name'] = $row['pname'];
     $result['product_image'] = $row['pimg'];
@@ -119,8 +122,9 @@ else
 {
     
 }
-	$udata = $con->query("select * from user where id=".$uid."")->fetch_assoc();
-	$date_time = $udata['rdate'];
+
+$udata = $con->query("select * from user where id=".$uid."")->fetch_assoc();
+$date_time = $udata['rdate'];
 	
 $remain = $con->query("select * from noti where date >='".$date_time."'")->num_rows;
 
@@ -131,6 +135,6 @@ $remain = $con->query("select * from noti where date >='".$date_time."'")->num_r
 	$wallet = $con->query("select * from user where id=".$uid."")->fetch_assoc();
 	$kp = array('Banner'=>$v,'Catlist'=>$cp,'Productlist'=>$d,"Remain_notification"=>$r_noti,"Main_Data"=>$curr,"dynamic_section"=>$sec,"Wallet"=>$wallet['wallet']);
 	
-	$returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Data Get Successfully!","ResultData"=>$kp);
+	$returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Les données sont réussies!","ResultData"=>$kp);
 }
 echo json_encode($returnArr);

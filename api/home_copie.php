@@ -6,7 +6,7 @@ $data = json_decode(file_get_contents('php://input'), true);
 $uid = $data['uid'];
 if($uid == '')
 {
-	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Something Went wrong  try again !");
+	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé essaie encore !");
 }
 else 
 { 
@@ -128,6 +128,6 @@ $remain = $con->query("select * from noti where date >='".$date_time."'")->num_r
 	$wallet = $con->query("select * from user where id=".$uid."")->fetch_assoc();
 	$kp = array('Banner'=>$v,'Catlist'=>$cp,'Productlist'=>$d,"Remain_notification"=>$r_noti,"Main_Data"=>$curr,"dynamic_section"=>$sec,"Wallet"=>$wallet['wallet']);
 	
-	$returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Data Get Successfully!","ResultData"=>$kp);
+	$returnArr = array("ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Les données sont réussies!","ResultData"=>$kp);
 }
 echo json_encode($returnArr);
