@@ -34,7 +34,7 @@ while($row = $sel->fetch_assoc())
 	$p['cat_id'] = $row['cat_id'];
 	$p['name'] = $row['name'];
 	$p['img'] = $row['catimg'];
-	$p['count'] = $con->query("select * from product where sid=".$row['id']."")->num_rows;
+	$p['count'] = $con->query("select * from product where cat_id=".$row['cat_id']." and sid=".$sub_cat_id." and sid_=".$row['id']."")->num_rows;
 	$myarray[] = $p;
 }
 $returnArr = array("data"=>$myarray,"ResponseCode"=>"200","Result"=>"true","ResponseMsg"=>"Sous-liste des catégories fondées!");
