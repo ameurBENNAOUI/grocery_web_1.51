@@ -45,7 +45,7 @@ $sels = $sels->fetch_assoc();
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title" id="basic-layout-form">Edit Category</h4>
+					<h4 class="card-title" id="basic-layout-form">Modifier la Spécialité</h4>
 					
 				</div>
 				<div class="card-body">
@@ -57,14 +57,14 @@ $sels = $sels->fetch_assoc();
 								
 
 								<div class="form-group">
-									<label for="cname">Category Name</label>
+									<label for="cname">Nom de Spécialité</label>
 									<input type="text" id="cname" value="<?php echo $sels['catname'];?>" class="form-control"  name="cname" required >
 								</div>
 
 								
 
 								<div class="form-group">
-									<label>Category Image</label>
+									<label>Specialité Image</label>
 									<input type="file" name="f_up" class="form-control-file" id="projectinput8">
 								</div>
 								
@@ -78,7 +78,7 @@ $sels = $sels->fetch_assoc();
 							<div class="form-actions">
 								
 								<button type="submit" name="up_cat" class="btn btn-raised btn-raised btn-primary">
-									<i class="fa fa-check-square-o"></i> Save
+									<i class="fa fa-check-square-o"></i> Enregistrer
 								</button>
 							</div>
 							
@@ -141,7 +141,7 @@ else
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.info('Category Update Successfully!!');
+    toastr.info('Mise à jour de la spécialité réussie !!');
 	setTimeout(function()
 	{
 		window.location.href="categorylist.php";
@@ -166,7 +166,7 @@ else
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title" id="basic-layout-form">Add Category</h4>
+					<h4 class="card-title" id="basic-layout-form">Ajouter une Specialité</h4>
 					
 				</div>
 				<div class="card-body">
@@ -178,14 +178,14 @@ else
 								
 
 								<div class="form-group">
-									<label for="cname">Category Name</label>
+									<label for="cname">Nom de Specialité</label>
 									<input type="text" id="cname" class="form-control"  name="cname" required >
 								</div>
 
 								
 
 								<div class="form-group">
-									<label>Category Image</label>
+									<label>Specialité Image</label>
 									<input type="file" name="f_up" class="form-control-file" id="projectinput8">
 								</div>
 
@@ -195,7 +195,7 @@ else
 							<div class="form-actions">
 								
 								<button type="submit" name="sub_cat" class="btn btn-raised btn-raised btn-primary">
-									<i class="fa fa-check-square-o"></i> Save
+									<i class="fa fa-check-square-o"></i> Enregistrer
 								</button>
 							</div>
 							
@@ -247,7 +247,7 @@ $con->query("insert into category(`catname`,`catimg`)values('".$cname."','".$url
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
     
-    toastr.info('Insert Category Successfully!!!');
+    toastr.info('Insérez la catégorie avec succès !!!');
     
   });
   </script>

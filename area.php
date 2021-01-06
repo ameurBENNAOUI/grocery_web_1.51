@@ -25,7 +25,7 @@ $sels = $sels->fetch_assoc();
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title" id="basic-layout-form">Edit Area</h4>
+					<h4 class="card-title" id="basic-layout-form">Modifier Zone</h4>
 					
 				</div>
 				<div class="card-body">
@@ -37,20 +37,20 @@ $sels = $sels->fetch_assoc();
 								
 
 								<div class="form-group">
-									<label for="cname">Area Name</label>
+									<label for="cname">Nom de Zone</label>
 									<input type="text" id="aname" value="<?php echo $sels['name'];?>" class="form-control"  name="cname" required >
 								</div>
 
 									<div class="form-group">
-									<label for="cname">Delivery Charge(Only Digit)</label>
+									<label for="cname">Frais de livraison (seulement chiffre)</label>
 									<input type="number" id="dcharge" value="<?php echo $sels['dcharge'];?>" class="form-control"  name="dcharge" step="any"  required >
 								</div>
 
 							<div class="form-group">
-									<label for="cname">Status</label>
+									<label for="cname">Statut</label>
 									<select name="status" class="form-control">
-									    <option value="1" <?php if($sels['status'] == 1){echo 'selected';}?>>Publish</option>
-									    <option value="0" <?php if($sels['status'] == 0){echo 'selected';}?>>Unpublish</option>
+									    <option value="1" <?php if($sels['status'] == 1){echo 'selected';}?>>Publier</option>
+									    <option value="0" <?php if($sels['status'] == 0){echo 'selected';}?>>dépublier</option>
 									</select>
 								</div>
 								
@@ -62,7 +62,7 @@ $sels = $sels->fetch_assoc();
 							<div class="form-actions">
 								
 								<button type="submit" name="up_cat" class="btn btn-raised btn-raised btn-primary">
-									<i class="fa fa-check-square-o"></i> Save
+									<i class="fa fa-check-square-o"></i> Enregistrer
 								</button>
 							</div>
 							
@@ -78,7 +78,7 @@ $sels = $sels->fetch_assoc();
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.info('Area Update Successfully!!');
+    toastr.info('Mise à jour de la zone réussie !!');
 	setTimeout(function()
 	{
 		window.location.href="alist.php";
@@ -102,7 +102,7 @@ $sels = $sels->fetch_assoc();
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title" id="basic-layout-form">Add Area</h4>
+					<h4 class="card-title" id="basic-layout-form">Ajouter une zone</h4>
 					
 				</div>
 				<div class="card-body">
@@ -114,20 +114,20 @@ $sels = $sels->fetch_assoc();
 								
 
 								<div class="form-group">
-									<label for="cname">Area Name</label>
+									<label for="cname">Nom de Zone</label>
 									<input type="text" id="aname" class="form-control"  name="cname" required >
 								</div>
 								
 								<div class="form-group">
-									<label for="cname">Delivery Charge(Only Digit)</label>
+									<label for="cname">Frais de livraison (seulement chiffre)</label>
 									<input type="text" id="dcharge"  class="form-control" pattern="[0-9]+"  name="dcharge" required >
 								</div>
  
 									<div class="form-group">
-									<label for="cname">Status</label>
+									<label for="cname">Statut</label>
 									<select name="status" class="form-control">
-									    <option value="1">Publish</option>
-									    <option value="0">Unpublish</option>
+									    <option value="1">Publier</option>
+									    <option value="0">dépublier</option>
 									</select>
 								</div>
 
@@ -140,7 +140,7 @@ $sels = $sels->fetch_assoc();
 							<div class="form-actions">
 								
 								<button type="submit" name="sub_cat" class="btn btn-raised btn-raised btn-primary">
-									<i class="fa fa-check-square-o"></i> Save
+									<i class="fa fa-check-square-o"></i> Enregistrer
 								</button>
 							</div>
 							
@@ -156,7 +156,7 @@ $con->query("insert into area_db(`name`,`status`,`dcharge`)values('".$cname."',"
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.info('Insert Area Successfully!!!');
+    toastr.info('Insérer la zone avec succès !!!');
    
   });
   </script>

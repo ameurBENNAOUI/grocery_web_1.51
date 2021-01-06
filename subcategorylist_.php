@@ -16,12 +16,15 @@
         <div class="main-content">
           <div class="content-wrapper"><!--Statistics cards Starts-->
 
+
+          
+
 <section id="dom">
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">SubCategory List</h4>
+                    <h4 class="card-title">Niveaux List</h4>
                 </div>
                 <div class="card-body collapse show">
                     <div class="card-block card-dashboard">
@@ -29,12 +32,12 @@
                         <table class="table table-striped table-bordered dom-jQuery-events">
                             <thead>
                                 <tr>
-								 <th>Sr No.</th>
-								 <th>Category Name</th>
-                                    <th>SubCategory Name</th>
-                                    <th>SubCategory_ Name</th>
-                                    <th>SubCategory Image</th>
-									<th>Total Product</th>
+								 <th>ID</th>
+								 <th>Nom de Spécialité</th>
+                                    <th>Nom de Niveau</th>
+                                    <th>Nom de Modul</th>
+                                    <th>Image de Modul</th>
+									<th>Total des Cours</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -55,7 +58,7 @@
 
                                     <td><?php echo $row['name'];?></td>
                                     <td><img class="media-object round-media" src="<?php echo $row['catimg'];?>" alt="Generic placeholder image" style="height: 75px;"></td>
-                                    <td><?php echo $con->query("select * from product where sid=".$row['id']."")->num_rows;?></td>
+                                    <td><?php echo $con->query("select * from product where cid=".$row['cat_id']." and sid=".$row['subcat_id']." and sid_=".$row['id']." ")->num_rows;?></td>
 									<td>
 									<a class="primary"  href="subcategory_.php?edit=<?php echo $row['id'];?>" data-original-title="" title="">
                                             <i class="ft-edit font-medium-3"></i>

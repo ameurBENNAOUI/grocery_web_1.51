@@ -30,11 +30,11 @@ else
   <li><a href="dashboard.php"><i class="ft-airplay"></i><span data-i18n="" class="menu-title">Dashboard</span></a>
               </li>
               
-<li class="has-sub nav-item"><a href="#"><i class="ft-list"></i><span data-i18n="" class="menu-title">Category</span></a>
+<li class="has-sub nav-item"><a href="#"><i class="ft-list"></i><span data-i18n="" class="menu-title">Spécialités</span></a>
                 <ul class="menu-content">
-                  <li><a href="category.php" class="menu-item active">Add category</a>
+                  <li><a href="category.php" class="menu-item active">Ajouter Spécialités </a>
                   </li>
-                  <li><a href="categorylist.php" class="menu-item">Category List</a>
+                  <li><a href="categorylist.php" class="menu-item">Spécialités List</a>
                   </li>
                  
                     </ul>
@@ -42,11 +42,11 @@ else
                 
               </li>
         
-        <li class="has-sub nav-item"><a href="#"><i class="ft-list"></i><span data-i18n="" class="menu-title">Sub Category</span></a>
+        <li class="has-sub nav-item"><a href="#"><i class="ft-list"></i><span data-i18n="" class="menu-title">Les niveaux</span></a>
                 <ul class="menu-content">
-                  <li><a href="subcategory.php" class="menu-item active">Add Subcategory</a>
+                  <li><a href="subcategory.php" class="menu-item active">Ajouter Niveau</a>
                   </li>
-                  <li><a href="subcategorylist.php" class="menu-item">Sub Category List</a>
+                  <li><a href="subcategorylist.php" class="menu-item">Niveau List</a>
                   </li>
                  
                     </ul>
@@ -54,11 +54,11 @@ else
                 
               </li>
 
-              <li class="has-sub nav-item"><a href="#"><i class="ft-list"></i><span data-i18n="" class="menu-title">Sub Category_</span></a>
+              <li class="has-sub nav-item"><a href="#"><i class="ft-list"></i><span data-i18n="" class="menu-title">Les Modules</span></a>
                 <ul class="menu-content">
-                  <li><a href="subcategory_.php" class="menu-item active">Add Subcategory_</a>
+                  <li><a href="subcategory_.php" class="menu-item active">Ajouter Module</a>
                   </li>
-                  <li><a href="subcategorylist_.php" class="menu-item">Sub Category List_</a>
+                  <li><a href="subcategorylist_.php" class="menu-item">Cours Lists</a>
                   </li>
                  
                     </ul>
@@ -67,14 +67,14 @@ else
               </li>
 
 
-              <li class="has-sub nav-item"><a href="#"><i class="ft-package"></i><span data-i18n="" class="menu-title">Product</span></a>
+              <li class="has-sub nav-item"><a href="#"><i class="ft-package"></i><span data-i18n="" class="menu-title">Les Cours</span></a>
                 <ul class="menu-content">
-                  <li><a href="product.php" class="menu-item">Add Product</a>
+                  <li><a href="product.php" class="menu-item">Ajouter Cours</a>
                   </li>
 
- <li><a href="import.php" class="menu-item">Import Product</a>
+ <!-- <li><a href="import.php" class="menu-item">Import Product</a> -->
                   </li>
-                  <li><a href="productlist.php" class="menu-item">Product List</a>
+                  <li><a href="productlist.php" class="menu-item">Cours List</a>
                   </li>
                  
                     </ul>
@@ -82,23 +82,23 @@ else
                 
               </li>
               
-               <li class="has-sub nav-item"><a href="#"><i class="fa fa-gift"></i><span data-i18n="" class="menu-title">Coupon</span></a>
+               <!-- <li class="has-sub nav-item"><a href="#"><i class="fa fa-gift"></i><span data-i18n="" class="menu-title">Coupon</span></a>
                 <ul class="menu-content">
                   <li><a href="coupon.php" class="menu-item">Add Coupon</a>
                   </li>
                   <li><a href="couponlist.php" class="menu-item">Coupon List</a>
                   </li>
                  
-                    </ul>
+                </ul>
                   
                 
-              </li>
+              </li> -->
               
-               <li class="has-sub nav-item"><a href="#"><i class="ft-compass"></i><span data-i18n="" class="menu-title">Area</span></a>
+               <li class="has-sub nav-item"><a href="#"><i class="ft-compass"></i><span data-i18n="" class="menu-title">Les Zones</span></a>
                 <ul class="menu-content">
-                  <li><a href="area.php" class="menu-item">Add Area</a>
+                  <li><a href="area.php" class="menu-item">Ajouter une Zone</a>
                   </li>
-                  <li><a href="alist.php" class="menu-item">Area List</a>
+                  <li><a href="alist.php" class="menu-item">Zones Liste</a>
                   </li>
                  
                     </ul>
@@ -107,7 +107,7 @@ else
               </li>
         
         
-        <li class="has-sub nav-item"><a href="#"><i class="ft-clock"></i><span data-i18n="" class="menu-title">Timeslot</span></a>
+        <!-- <li class="has-sub nav-item"><a href="#"><i class="ft-clock"></i><span data-i18n="" class="menu-title">Timeslot</span></a>
                 <ul class="menu-content">
                   <li><a href="timesloat.php" class="menu-item">Add Timeslot</a>
                   </li>
@@ -117,10 +117,10 @@ else
                     </ul>
                   
                 
-              </li>
+          </li> -->
               
         
-               <li class="has-sub nav-item"><a href="#"><i class="fa fa-motorcycle"></i><span data-i18n="" class="menu-title">Delivery Boy</span></a>
+               <!-- <li class="has-sub nav-item"><a href="#"><i class="fa fa-motorcycle"></i><span data-i18n="" class="menu-title">Delivery Boy</span></a>
                 <ul class="menu-content">
                   <li><a href="add_rider.php" class="menu-item active">Add Delivery Boy</a>
                   </li>
@@ -131,15 +131,15 @@ else
                   
                 
               </li>
-			  
+			   -->
 			  
 			  
 			 
-         <li class="has-sub nav-item"><a href="#"><i class="ft-image"></i><span data-i18n="" class="menu-title">Banner</span></a>
+         <li class="has-sub nav-item"><a href="#"><i class="ft-image"></i><span data-i18n="" class="menu-title">Bannière</span></a>
                 <ul class="menu-content">
-                  <li><a href="banner.php" class="menu-item">Add Banner</a>
+                  <li><a href="banner.php" class="menu-item">Ajouter une bannière</a>
                   </li>
-                  <li><a href="bannerlist.php" class="menu-item">Banner List</a>
+                  <li><a href="bannerlist.php" class="menu-item">Liste des bannières</a>
                   </li>
                  
                     </ul>
@@ -149,7 +149,7 @@ else
  
               
               
-              <li class="has-sub nav-item"><a href="#"><i class="ft-copy"></i><span data-i18n="" class="menu-title">Home Section</span></a>
+              <!-- <li class="has-sub nav-item"><a href="#"><i class="ft-copy"></i><span data-i18n="" class="menu-title">Home Section</span></a>
                 <ul class="menu-content">
                   <li><a href="home_section.php" class="menu-item">Add Section</a>
                   </li>
@@ -159,7 +159,7 @@ else
                     </ul>
                   
                 
-              </li>
+              </li> -->
               
               
              
@@ -167,9 +167,9 @@ else
         
          <li class="has-sub nav-item"><a href="#"><i class="ft-bell"></i><span data-i18n="" class="menu-title">Notification</span></a>
                 <ul class="menu-content">
-                  <li><a href="template.php" class="menu-item">Add Notification</a>
+                  <li><a href="template.php" class="menu-item">Ajouter une notification</a>
                   </li>
-                  <li><a href="templatelist.php" class="menu-item">Notification List</a>
+                  <li><a href="templatelist.php" class="menu-item">LISTE DE NOTIFICATION</a>
                   </li>
                  
                     </ul>
@@ -177,20 +177,20 @@ else
                 
               </li>
 			  
-			   <li class="has-sub nav-item"><a href="#"><i class="ft-shopping-cart"></i><span data-i18n="" class="menu-title">Order</span></a>
+			   <li class="has-sub nav-item"><a href="#"><i class="ft-shopping-cart"></i><span data-i18n="" class="menu-title">Les Commandes</span></a>
                 <ul class="menu-content">
-                  <li><a href="order.php" class="menu-item">Pending Order</a>
+                  <li><a href="order.php" class="menu-item">Commande en cours</a>
                   </li>
-                  <li><a href="orders.php" class="menu-item">Complete Order</a>
+                  <li><a href="orders.php" class="menu-item">Complétez la commande</a>
                   </li>
-                  <li><a href="excel.php" class="menu-item">Export Order</a>
-                  </li>
+                  <!-- <li><a href="excel.php" class="menu-item">Export Order</a>
+                  </li> -->
                     </ul>
                   
                 
               </li>
 			  
-			   <li class="has-sub nav-item"><a href="#"><i class="ft-users"></i><span data-i18n="" class="menu-title">Customer Section</span></a>
+			   <!-- <li class="has-sub nav-item"><a href="#"><i class="ft-users"></i><span data-i18n="" class="menu-title">Customer Section</span></a>
                 <ul class="menu-content">
                   <li><a href="user.php" class="menu-item">Customer</a>
                   </li>
@@ -201,11 +201,11 @@ else
                     </ul>
                   
                 
-              </li>
+              </li> -->
 			  
 			  
 			  
-               <li class="has-sub nav-item"><a href="#"><i class="fa fa-flag"></i><span data-i18n="" class="menu-title"> Country Code</span></a>
+               <!-- <li class="has-sub nav-item"><a href="#"><i class="fa fa-flag"></i><span data-i18n="" class="menu-title"> Country Code</span></a>
                 <ul class="menu-content">
                   <li><a href="code.php" class="menu-item active"> Add Country Code</a>
                   </li>
@@ -213,14 +213,14 @@ else
                   </li>
                  
                     </ul>
-                  </li>
+                  </li> -->
                 
              
 
               
-			   <li><a href="payment_list.php"><i class="fa fa-money"></i><span data-i18n="" class="menu-title">Payment  List</span></a></li>
+			   <!-- <li><a href="payment_list.php"><i class="fa fa-money"></i><span data-i18n="" class="menu-title">Payment  List</span></a></li> -->
 			  <li><a href="profile.php"><i class="ft-user"></i><span data-i18n="" class="menu-title">Profile</span></a></li>
-        <li><a href="setting.php"><i class="ft-settings"></i><span data-i18n="" class="menu-title">Settings</span></a>
+        <!-- <li><a href="setting.php"><i class="ft-settings"></i><span data-i18n="" class="menu-title">Settings</span></a> -->
               </li>
             </ul>
           </div>
@@ -252,7 +252,8 @@ else
                
                 <li class="dropdown nav-item"><a id="dropdownBasic3" href="#" data-toggle="dropdown" class="nav-link position-relative dropdown-toggle"><i class="ft-user font-medium-3 blue-grey darken-4"></i>
                     <p class="d-none">User Settings</p></a>
-                  <div ngbdropdownmenu="" aria-labelledby="dropdownBasic3" class="dropdown-menu text-left dropdown-menu-right"><a href="logout.php" class="dropdown-item"><i class="ft-power mr-2"></i><span>Logout</span></a>
+                  <div ngbdropdownmenu="" aria-labelledby="dropdownBasic3" class="dropdown-menu text-left dropdown-menu-right"><a href="logout.php" class="dropdown-item"><i class="ft-power mr-2"></i><span>Se déconnecter
+</span></a>
                   </div>
                 </li>
               

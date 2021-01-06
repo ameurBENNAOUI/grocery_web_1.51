@@ -28,10 +28,10 @@
                         <table class="table table-striped table-bordered dom-jQuery-events">
                             <thead>
                                 <tr>
-								 <th>Sr No.</th>
-                                    <th>Area Name</th>
-                                     <th>Delivery Charge</th>
-                                    <th>Status</th>
+								 <th>ID</th>
+                                    <th>Nom de Zone</th>
+                                     <th>Frais de livraison</th>
+                                    <th>Statut</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -81,7 +81,7 @@ $con->query("delete from area_db where id=".$_GET['dele']."");
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.error('selected area deleted successfully.');
+    toastr.error('zone sélectionnée supprimée avec succès.');
     setTimeout(function()
 	{
 		window.location.href="alist.php";

@@ -21,7 +21,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Category List</h4>
+                    <h4 class="card-title">Liste des spécialités</h4>
                 </div>
                 <div class="card-body collapse show">
                     <div class="card-block card-dashboard">
@@ -29,10 +29,10 @@
                         <table class="table table-striped table-bordered dom-jQuery-events">
                             <thead>
                                 <tr>
-								 <th>Sr No.</th>
-                                    <th>Category Name</th>
-                                    <th>Category Image</th>
-									<th>Total Subcategory</th>
+								 <th>ID</th>
+                                    <th>Nom de specialité</th>
+                                    <th>Image de special</th>
+									<th>Niveau totale</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -82,7 +82,7 @@ $con->query("delete from category where id=".$_GET['dele']."");
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.error('Category Delete successfully.');
+    toastr.error('La suppression de la spécialité a réussi.');
     setTimeout(function()
 	{
 		window.location.href="categorylist.php";

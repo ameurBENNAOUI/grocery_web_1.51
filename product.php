@@ -114,7 +114,7 @@ if(isset($_GET['edit']))
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title" id="basic-layout-form">Edit Product</h4>
+					<h4 class="card-title" id="basic-layout-form">Modifier Cours</h4>
 					
 				</div>
 				<div class="card-body">
@@ -126,20 +126,20 @@ if(isset($_GET['edit']))
 								
 
 								<div class="form-group">
-									<label for="cname">Product Name</label>
+									<label for="cname">Nom de Cours</label>
 									<input type="text" id="vname" class="form-control"  value="<?php echo $selk['pname'];?>" name="pname" required>
 								</div>
 								
                                <div class="form-group">
-									<label for="cname">Product Image</label>
+									<label for="cname">image de produit</label>
 									<input type="file" id="pimg" class="form-control"  placeholder="Enter Product Image" name="pimg">
 								<img src="<?php echo $selk['pimg'];?>" width="150" height="150"/>
 								</div>
 								
 								<div class="form-group">
-									<label for="cname">Product Related Image</label>
+									<label for="cname">Image lieé a produit </label>
 									<input type="file" id="pimg" class="form-control"  placeholder="Enter Product Related Image" name="prel[]" multiple>
-								<p>Only Upload 3 Images</p>
+								<p>Télécharger seulement 3 images</p>
 								<?php $sb = explode(',',$selk['prel']);
 									
 									
@@ -158,14 +158,14 @@ if(isset($_GET['edit']))
 									?>
 								</div>
 								
-                                <div class="form-group">
+                                <!-- <div class="form-group">
 									<label for="gurl">Seller Name / Shop Name</label>
 									<input type="text" id="gurl" class="form-control"  placeholder="Enter Seller Name" value="<?php echo $selk['sname'];?>" name="sname" required>
 									
-								</div>
+								</div> -->
 								
 								<div class="form-group">
-											<label for="projectinput6">Select Category</label>
+											<label for="projectinput6">Choisir une specialité</label>
 											<select id="cat_change" name="catname" class="form-control">
 											
 												
@@ -185,7 +185,7 @@ if(isset($_GET['edit']))
 										</div>
 										
 										<div class="form-group">
-											<label for="projectinput6">Select SubCategory</label>
+											<label for="projectinput6">Choisir une niveau</label>
 											<select id="sub_list" name="subcatname" class="form-control">
 												
 												<?php 
@@ -204,7 +204,7 @@ if(isset($_GET['edit']))
 										</div>
 
 										<div class="form-group">
-											<label for="projectinput6">Select SubCategory</label>
+											<label for="projectinput6">Choisir une niveau</label>
 											<select id="sub_list_" name="subcatname_" class="form-control">
 												
 												<?php 
@@ -224,66 +224,66 @@ if(isset($_GET['edit']))
 
 
 										
-										<div class="form-group">
+										<!-- <div class="form-group">
 											<label for="projectinput6">Out OF Stock?</label>
 											<select id="projectinput6" name="ostock" class="form-control" required>
 												
 												<option <?php if($selk['stock'] == 0) {echo 'selected';}?> value="0">Yes</option>
 												<option <?php if($selk['stock'] == 1) {echo 'selected';}?> value="1">No</option>
 											</select>
-										</div>
+										</div> -->
 										
 										<div class="form-group">
-											<label for="projectinput63">Send Notification?</label>
+											<label for="projectinput63">Envoyer une notification?</label>
 											<select id="projectinput63" name="snoti" class="form-control">
 												
-												<option value="1">Yes</option>
-												<option  value="0" selected>No</option>
+												<option value="1">Oui</option>
+												<option  value="0" selected>Non</option>
 											</select>
 										</div>
 										
 										<div class="form-group">
-											<label for="projectinput6">Product Publish Or Unpublish?</label>
+											<label for="projectinput6">Cours publier ou dépublier?</label>
 											<select id="projectinput6" name="ppuborun" class="form-control">
 												
-												<option value="0" <?php if($selk['status'] == 0) {echo 'selected';}?> >Unpublish</option>
-												<option <?php if($selk['status'] == 1) {echo 'selected';}?> value="1">Publish</option>
+												<option value="0" <?php if($selk['status'] == 0) {echo 'selected';}?> >dépublier</option>
+												<option <?php if($selk['status'] == 1) {echo 'selected';}?> value="1">Publier</option>
 											</select>
 										</div>
 										
-										<div class="form-group">
+										<!-- <div class="form-group">
 											<label for="projectinput6">Make Product Popular?</label>
 											<select id="projectinput6" name="popular" class="form-control">
 												
 												<option value="0" <?php if($selk['popular'] == 0) {echo 'selected';}?> >No</option>
 												<option <?php if($selk['popular'] == 1) {echo 'selected';}?> value="1">Yes</option>
 											</select>
-										</div>
+										</div> -->
 										
                                    <div class="form-group">
-									<label for="gurl">Product Small Description</label>
-									<textarea class="form-control" name="psdesc" placeholder="Enter Product Small Description" required><?php echo $selk['psdesc'];?></textarea>
+									<label for="gurl">Petite description du Cours</label>
+									<textarea class="form-control" name="psdesc" placeholder="Entrez la petite description du Cours" required><?php echo $selk['psdesc'];?></textarea>
 									
 								</div>
 									
 								
 								<div class="form-group">
-									<label for="gurl">Product (Gms,kg,ltr,ml,pcs)</label>
+									<label for="gurl">Cours (noir,color)</label>
 									<input type="text" id="ptype" class="form-control"  name="pgms"  value="<?php echo str_replace('$;',',',$selk['pgms']);?>"  data-role="tagsinput" required>
-									<p>After  write Product Type Press Enter</p>
+									<p>Après avoir écrit le type de Cours, appuyez sur Entrée</p>
 								</div>
 								
 								<div class="form-group">
-									<label for="gurl">Product Price</label>
+									<label for="gurl">Cours Prix</label>
 									<input type="text" id="pprice" class="form-control"  name="pprice"  value="<?php echo str_replace('$;',',',$selk['pprice']);?>" required>
-									<p>After  write Product Price Press Enter</p>
+									<p>Après avoir écrit le prix du produit, appuyez sur Entrée</p>
 								</div>
 								
-								<div class="form-group">
+								<!-- <div class="form-group">
 									<label for="gurl">Product discount(Only Digit)</label>
 									<input type="text" id="gurl" class="form-control"  name="discount_percentage" placeholder="Enter discount in percentage" value="<?php echo $selk['discount'];?>" required>
 									
-								</div>
+								</div> -->
 								
 								
 								
@@ -294,7 +294,7 @@ if(isset($_GET['edit']))
 							<div class="form-actions">
 								
 								<button type="submit" name="edit_product" class="btn btn-raised btn-raised btn-primary">
-									<i class="fa fa-check-square-o"></i> Edit Product
+									<i class="fa fa-check-square-o"></i> Modifier Cours
 								</button>
 							</div>
 						</form>
@@ -309,19 +309,60 @@ if(isset($_GET['edit']))
 			$data = $con->query("select * from product where id=".$_GET['edit']."")->fetch_assoc();
 		$pname = mysqli_real_escape_string($con,$_POST['pname']);
 		
-$sname = $_POST['sname'];
-$popular = $_POST['popular'];
-       $discount = $_POST['discount_percentage'];
-		$catname = $_POST['catname'];
-		$subcatname = $_POST['subcatname'];
-		$ostock = $_POST['ostock'];
+if (isset($_POST['sname'])){
+	$sname = $_POST['sname'];
+}else{
+	$sname = "a";
+}
+
+// $popular = $_POST['popular'];
+    //    $discount = $_POST['discount_percentage'];
+		// $catname = $_POST['catname'];
+		// $subcatname = $_POST['subcatname'];
+		// $ostock = $_POST['ostock'];
 		$snoti = $_POST['snoti'];
 		$psdesc = mysqli_real_escape_string($con,$_POST['psdesc']);
 		$pgms = str_replace(',','$;',$_POST['pgms']);
 		$pprice = str_replace(',','$;',$_POST['pprice']);
+
+		if (isset($_POST['ppuborun'])){
+			$status = $_POST['ppuborun'];
+		}else{
+			$status = 1;
+		}
+
+        // $status = $_POST['ppuborun'];
+		
+		if(isset($_POST['discount_percentage'])){
+			$discount = $_POST['discount_percentage'];
+		}else{
+			$discount = 0;
+		}
+
+		if(isset($_POST['catname'])) {
+			$catname = $_POST['catname'];
+			$subcatname = $_POST['subcatname'];
+			$subcatname_ = $_POST['subcatname_'];
+		} else  {
+			$catname = 0;
+			$subcatname = 0;
+			$subcatname_ = 0;		}
+
+
+		
+		if (isset($_POST['ostock'])){
+			$ostock = $_POST['ostock'];
+		}else{
+			$ostock = 1;
+		}
+		if (isset($_POST['popular'])){
+			$popular = $_POST['popular'];
+		}else{
+			$popular =0;
+		}
 		
         $timestamp = date("Y-m-d H:i:s");
-        $status = $_POST['ppuborun'];
+        // $status = $_POST['ppuborun'];
 	
         if($_FILES["pimg"]["name"] == '')
 							{
@@ -404,7 +445,7 @@ else
 							}
 							
            
-        $con->query("update product set pname='".$pname."',sname='".$sname."',pimg='".$pimg."',prel='".$related."',popular=".$popular.",discount=".$discount.",cid=".$catname.",sid=".$subcatname.",psdesc='".$psdesc."',pgms='".$pgms."',pprice='".$pprice."',status=".$status.",stock=".$ostock." where id=".$_GET['edit']."");
+        $con->query("update product set pname='".$pname."',sname='".$sname."',pimg='".$pimg."',prel='".$related."',popular=".$popular.",discount=".$discount.",cid=".$catname.",sid=".$subcatname.",sid_=".$subcatname_.", psdesc='".$psdesc."',pgms='".$pgms."',pprice='".$pprice."',status=".$status.",stock=".$ostock." where id=".$_GET['edit']."");
 		
 		 
         if($snoti == 1)
@@ -424,7 +465,7 @@ else
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.info('Product Update Successfully!!');
+    toastr.info('Mise à jour du Cours réussie !!');
 	setTimeout(function()
 	{
 		window.location.href="productlist.php";
@@ -448,7 +489,7 @@ else
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title" id="basic-layout-form">Add Product</h4>
+					<h4 class="card-title" id="basic-layout-form">Ajouter une Cours</h4>
 					
 				</div>
 				<div class="card-body">
@@ -460,31 +501,31 @@ else
 								
 
 								<div class="form-group">
-									<label for="cname">Product Name</label>
-									<input type="text" id="vname" class="form-control"  placeholder="Enter Product Name" name="pname" required>
+									<label for="cname">Nom de Cours</label>
+									<input type="text" id="vname" class="form-control"  placeholder="Entrez le nom du cours" name="pname" required>
 								</div>
 								
 								<div class="form-group">
-									<label for="cname">Product Image</label>
-									<input type="file" id="pimg" class="form-control"  placeholder="Enter Product Image" name="pimg" required>
+									<label for="cname">Image de Cours</label>
+									<input type="file" id="pimg" class="form-control"  placeholder="Entrez l'image du cours" name="pimg" required>
 								</div>
 								
 								<div class="form-group">
-									<label for="cname">Product Related Image</label>
-									<input type="file" id="pimg" class="form-control"  placeholder="Enter Product Related Image" name="prel[]" multiple >
-								<p>Only Upload 3 Images</p>
+									<label for="cname">Cours liée image</label>
+									<input type="file" id="pimg" class="form-control"  placeholder="Entrez lieé image du cours" name="prel[]" multiple >
+								<p>Télécharger seulement 3 images</p>
 								</div>
 								
-                                <div class="form-group">
+                                <!-- <div class="form-group">
 									<label for="gurl">Seller Name / Shop Name</label>
 									<input type="text" id="gurl" class="form-control"  placeholder="Enter Seller Name" name="sname" required>
 									
-								</div>
+								</div> -->
 								
 								<div class="form-group">
-									<label for="projectinput6">Select Category</label>
+									<label for="projectinput6">Choisir une specialité</label>
 									<select id="cat_change" name="catname" class="form-control" >
-										<option value="" selected="" disabled="">Select Category</option>
+										<option value="" selected="" disabled="">Choisir une specialité</option>
 										<?php 
 										$sk = mysqli_query($con,"select * from category");
 										while($h = mysqli_fetch_assoc($sk))
@@ -497,91 +538,91 @@ else
 								</div>
 										
 										<div class="form-group">
-											<label for="projectinput6">Select SubCategory</label>
+											<label for="projectinput6">Choisir une niveau</label>
 											<select id="sub_list" name="subcatname" class="form-control" >
-												<option value="" selected="" disabled="">Select SubCategory</option>
+												<option value="" selected="" disabled="">Choisir une niveau</option>
 												
 												
 											</select>
 										</div>
 
 										<div class="form-group">
-											<label for="projectinput6">Select SubCategory_</label>
+											<label for="projectinput6">Choisir une niveau_</label>
 											<select id="sub_list_" name="subcatname_" class="form-control" >
-												<option value="" selected="" disabled="">Select SubCategory_</option>
+												<option value="" selected="" disabled="">Choisir une niveau_</option>
 												
 												
 											</select>
 										</div>
 										
 
-								<div class="form-group">
+								<!-- <div class="form-group">
 											<label for="projectinput6">Out OF Stock?</label>
 											<select id="projectinput6" name="ostock" class="form-control">
 												
 												<option value="0">Yes</option>
 												<option selected="" value="1">No</option>
 											</select>
-										</div>
+										</div> -->
 										
 										<div class="form-group">
-											<label for="projectinput63">Send Notification?</label>
+											<label for="projectinput63">Envoyer une Notification?</label>
 											<select id="projectinput63" name="snoti" class="form-control">
 												
-												<option value="1">Yes</option>
-												<option selected="" value="0">No</option>
+												<option value="1">Oui</option>
+												<option selected="" value="0">Non</option>
 											</select>
 										</div>
 										
 										<div class="form-group">
-											<label for="projectinput6">Product Publish Or Unpublish?</label>
+											<label for="projectinput6">Publier ou dépublier le produit?</label>
 											<select id="projectinput6" name="ppuborun" class="form-control">
 												
-												<option value="0">Unpublish</option>
-												<option selected="" value="1">Publish</option>
+												<option value="0">dépublier</option>
+												<option selected="" value="1">Publier</option>
 											</select>
 										</div>
 										
-										<div class="form-group">
+										<!-- <div class="form-group">
 											<label for="projectinput6">Make Product Popular?</label>
 											<select id="projectinput6" name="popular" class="form-control">
 												
 												<option value="1">Yes</option>
 												<option selected="" value="0">No</option>
 											</select>
-										</div>
+										</div> -->
 										
 								<div class="form-group">
-									<label for="gurl">Product Small Description</label>
-									<textarea class="form-control" name="psdesc" placeholder="Enter Product Small Description" required></textarea>
+									<label for="gurl">Petite description du Cours </label>
+									<textarea class="form-control" name="psdesc" placeholder="Enteré Petite description du Cours" required></textarea>
 									
 								</div>
 									
 								
 								<div class="form-group">
-									<label for="gurl">Product (Gms,kg,ltr,ml,pcs)</label>
-									<input type="text" id="ptype" class="form-control"  name="pgms"  value="1 gms,250 gms" data-role="tagsinput"  required>
+									<label for="gurl">Cours (noir,color)</label>
+									<input type="text" id="ptype" class="form-control"  name="pgms"  value="noir,Couleur" data-role="tagsinput"  required>
 									<p>After  write Product Type Press Enter</p>
 								</div>
 								
 								<div class="form-group">
 									<label for="gurl">Product Price</label>
-									<input type="text" id="pprice" class="form-control"  value="1,10" name="pprice" data-role="tagsinput" required>
-									<p>After  write Product Price Press Enter</p>
+									<input type="text" id="pprice" class="form-control"  value="60,100" name="pprice" data-role="tagsinput" required>
+									<p>Après avoir écrit le prix du produit, appuyez sur Entrée</p>
 								</div>
 								
-								<div class="form-group">
+								<!-- <div class="form-group">
 									<label for="gurl">Product discount (Only Digit)</label>
 									<input type="text" id="gurl" class="form-control"  name="discount_percentage" placeholder="Enter discount in percentage ex. 5" required>
 									
-								</div>
+								</div> -->
 								
 							</div>
 
 							<div class="form-actions">
 								
 								<button type="submit" name="sub_product" class="btn btn-raised btn-raised btn-primary">
-									<i class="fa fa-check-square-o"></i> Save Product
+									<i class="fa fa-check-square-o"></i> Enregistrer le produit
 								</button>
 							</div>
 						</form>
@@ -600,7 +641,7 @@ else
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.error('Sorry Only Allow 3 Images.');
+    toastr.error("Désolé, n'autorisez que 3 images.");
     setTimeout(function()
 	{
 		window.location.href="productlist.php";
@@ -612,7 +653,12 @@ else
 		else 
 		{
 		$pname = mysqli_real_escape_string($con,$_POST['pname']);
-$sname = $_POST['sname'];
+		if (isset($_POST['sname'])){
+			$sname = $_POST['sname'];
+		}else{
+			$sname ="aa";
+		}
+
 
 
 		if(isset($_POST['catname'])) {
@@ -625,16 +671,40 @@ $sname = $_POST['sname'];
 			$subcatname_ = 0;		}
 
 
-		$ostock = $_POST['ostock'];
+		
+		if (isset($_POST['ostock'])){
+			$ostock = $_POST['ostock'];
+		}else{
+			$ostock = 1;
+		}
 		$snoti = $_POST['snoti'];
 		$psdesc = mysqli_real_escape_string($con,$_POST['psdesc']);
 		$pgms = str_replace(',','$;',$_POST['pgms']);
-		$popular = $_POST['popular'];
+
+		if (isset($_POST['popular'])){
+			$popular = $_POST['popular'];
+		}else{
+			$popular =0;
+		}
+
+		
 		$pprice = str_replace(',','$;',$_POST['pprice']);
 		
-        $timestamp = date("Y-m-d H:i:s");
-        $status = $_POST['ppuborun'];
-		$discount = $_POST['discount_percentage'];
+		$timestamp = date("Y-m-d H:i:s");
+		
+		if (isset($_POST['ppuborun'])){
+			$status = $_POST['ppuborun'];
+		}else{
+			$status = 1;
+		}
+
+        // $status = $_POST['ppuborun'];
+		
+		if(isset($_POST['discount_percentage'])){
+			$discount = $_POST['discount_percentage'];
+		}else{
+			$discount = 0;
+		}
        
         $fileName = $_FILES['pimg']['tmp_name'];
         $sourceProperties = getimagesize($fileName);
@@ -698,6 +768,7 @@ else
 		 else{
 			 $related = '';
 		 }
+		//  echo(".$pname."".$url."".$related."".$sname."".$catname."".$subcatname."".$subcatname_."".$psdesc."".$pgms."".$pprice."".$timestamp."".$status."".$ostock."".$discount."".$popular.");
 		$con->query("insert into product(`pname`,`pimg`,`prel`,`sname`,`cid`,`sid`,`sid_`,`psdesc`,`pgms`,`pprice`,`date`,`status`,`stock`,`discount`,`popular`)values('".$pname."','".$url."','".$related."','".$sname."',".$catname.",".$subcatname.",".$subcatname_.",'".$psdesc."','".$pgms."','".$pprice."','".$timestamp."',".$status.",".$ostock.",".$discount.",".$popular.")");
 	
 		if($snoti == 1)
