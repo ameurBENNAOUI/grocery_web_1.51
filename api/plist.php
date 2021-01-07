@@ -49,16 +49,16 @@ else
 	$p_method = $row['p_method'];
     $total =$row['total'] ;
     $odate = $row['order_date'];
-    // $timesloat = $row['timesloat'];
-	// $tax = $row['tax'];
-	// $counpon_discount = $row['cou_amt'];
+    $timesloat = $row['timesloat'];
+	$tax = $row['tax'];
+	$counpon_discount = $row['cou_amt'];
 	$wallet = $row['wal_amt'];
 	$address_id = $row['address_id'];
 	$rid = $row['rid'];
     $result['total'] = $row['total'];
     $result['status'] = $row['status'];
     $result['order_date'] = $row['order_date'];
-    // $result['timesloat'] = $row['timesloat'];
+    $result['timesloat'] = $row['timesloat'];
     $pp[] = $result;
     }
    
