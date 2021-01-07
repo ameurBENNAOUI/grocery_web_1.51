@@ -5,11 +5,7 @@ $data = json_decode(file_get_contents('php://input'), true);
  
 $uid = $data['uid'];
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 1388f5b5e9dcf3455ccd7fcf12bd76b00116f324
 if($uid == '')
 {
 	$returnArr = array("ResponseCode"=>"401","Result"=>"false","ResponseMsg"=>"Quelque chose s'est mal passé essaie encore !");
