@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 try {
   //Username, Password and Database
-  $con = new mysqli("localhost", "root", "", "grocery_v1.51");
+  $con = new mysqli("localhost", "cpfedbb4076", "d5781c6b551082fe7dafe67c122c231029660e59", "cpfedbb4076");
   $con->set_charset("utf8mb4");
 } catch(Exception $e) {
   error_log($e->getMessage());
