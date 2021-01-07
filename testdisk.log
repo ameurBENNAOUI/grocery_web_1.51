@@ -1,0 +1,86 @@
+
+
+Thu Jan  7 17:12:16 2021
+Command line: TestDisk
+
+TestDisk 7.1, Data Recovery Utility, July 2019
+Christophe GRENIER <grenier@cgsecurity.org>
+https://www.cgsecurity.org
+OS: Linux, kernel 5.4.0-59-generic (#65-Ubuntu SMP Thu Dec 10 12:01:51 UTC 2020) x86_64
+Compiler: GCC 9.2
+ext2fs lib: 1.45.5, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.1
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Warning: can't get size for Disk /dev/loop9 - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/vda - 53 GB / 50 GiB - CHS 104025 16 63, sector size=512
+Disk /dev/loop0 - 49 MB / 47 MiB - 97520 sectors (RO), sector size=512
+Disk /dev/loop1 - 51 MB / 49 MiB - 101304 sectors (RO), sector size=512
+Disk /dev/loop2 - 58 MB / 55 MiB - 113296 sectors (RO), sector size=512
+Disk /dev/loop3 - 58 MB / 55 MiB - 113424 sectors (RO), sector size=512
+Disk /dev/loop4 - 64 MB / 61 MiB - 126224 sectors (RO), sector size=512
+Disk /dev/loop5 - 73 MB / 70 MiB - 144512 sectors (RO), sector size=512
+Disk /dev/loop6 - 71 MB / 67 MiB - 138752 sectors (RO), sector size=512
+Disk /dev/loop7 - 32 MB / 31 MiB - 63616 sectors (RO), sector size=512
+Disk /dev/loop8 - 32 MB / 31 MiB - 63672 sectors (RO), sector size=512
+
+Partition table type (auto): EFI GPT
+Disk /dev/vda - 53 GB / 50 GiB
+Partition table type: EFI GPT
+
+Interface Advanced
+hdr_size=92
+hdr_lba_self=1
+hdr_lba_alt=104857599 (expected 104857599)
+hdr_lba_start=34
+hdr_lba_end=104857566
+hdr_lba_table=2
+hdr_entries=128
+hdr_entsz=128
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+14 P Unknown                     2048      10239       8192
+15 P MS Data                    10240     227327     217088 [UEFI]
+     FAT32, blocksize=512, 111 MB / 106 MiB
+ 1 P Linux filesys. data       227328  104857566  104630239
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+
+Interface Advanced
+hdr_size=92
+hdr_lba_self=1
+hdr_lba_alt=104857599 (expected 104857599)
+hdr_lba_start=34
+hdr_lba_end=104857566
+hdr_lba_table=2
+hdr_entries=128
+hdr_entsz=128
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+14 P Unknown                     2048      10239       8192
+15 P MS Data                    10240     227327     217088 [UEFI]
+     FAT32, blocksize=512, 111 MB / 106 MiB
+ 1 P Linux filesys. data       227328  104857566  104630239
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+21686148 6449 6e6f 74 4e 65 65 64 45 46 49
+
+TestDisk exited normally.
