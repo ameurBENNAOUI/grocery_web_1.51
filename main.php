@@ -190,18 +190,18 @@ else
                 
               </li>
 			  
-			   <!-- <li class="has-sub nav-item"><a href="#"><i class="ft-users"></i><span data-i18n="" class="menu-title">Customer Section</span></a>
+			   <li class="has-sub nav-item"><a href="#"><i class="ft-users"></i><span data-i18n="" class="menu-title">Section client</span></a>
                 <ul class="menu-content">
-                  <li><a href="user.php" class="menu-item">Customer</a>
+                  <li><a href="user.php" class="menu-item">Client</a>
                   </li>
-                  <li><a href="orderrate.php" class="menu-item">Customer Rating</a>
-                  </li>
+                  <!-- <li><a href="orderrate.php" class="menu-item">Customer Rating</a>
+                  </li> -->
                   <li><a href="feed.php" class="menu-item">Feedback</a>
                   </li>
                     </ul>
                   
                 
-              </li> -->
+              </li>
 			  
 			  
 			  

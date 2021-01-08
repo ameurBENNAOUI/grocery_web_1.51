@@ -21,7 +21,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Feedback List</h4>
+                    <h4 class="card-title">Feedback Liste</h4>
                 </div>
                 
                 <div class="card-body collapse show">
@@ -35,7 +35,7 @@
                                    
                                     <th>Name</th>
                                     <th>Mobile</th>
-                                    <th>Rate Star</th>
+                                    <th>Noter l'étoile</th>
                                     <th>Message</th>
                                     
 

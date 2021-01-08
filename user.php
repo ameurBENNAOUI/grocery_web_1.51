@@ -25,7 +25,7 @@ if(isset($_GET['a_bal']))
 {
 	?>
 	      <div class="card-header">
-                    <h4 class="card-title">Add Wallet Balance To Selected User</h4>
+                    <h4 class="card-title">Ajouter portefeuille Solde à l'utilisateur sélectionné</h4>
                 </div>
                 <div class="card-body collapse show">
                     <div class="card-block card-dashboard">
@@ -66,7 +66,7 @@ $con->query("update user set wallet=wallet + ".$wallet." where id=".$id."");
 						 <script type="text/javascript">
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
-    toastr.info('Add Balance Successfully!!!');
+    toastr.info("Ajoutez l'équilibre avec succès !!!");
     window.location.href="user.php";
 	
   });
@@ -88,13 +88,13 @@ else
                         <table class="table table-striped table-bordered dom-jQuery-events">
                             <thead>
                                 <tr>
-								 <th>Sr No.</th>
-                                    <th>Name</th>
+								 <th>ID</th>
+                                    <th>Nom</th>
                                     <th>Email</th>
-									<th>Country Code</th>
+									<!-- <th>Country Code</th> -->
                                     <th>Mobile</th>
-                                   <th>password</th>
-									 <th>Current_Status</th>
+                                   <!-- <th>password</th> -->
+									 <th>Statut</th>
 									 <th>Wallet Balance</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -114,9 +114,9 @@ else
                                     <td><?php echo $i; ?></td>
                                     <td><?php echo $row['name'];?></td>
                                     <td><?php echo $row['email'];?></td>
-									<td><?php echo $row['ccode'];?></td>
+									<!-- <td><?php echo $row['ccode'];?></td> -->
                                     <td><?php echo $row['mobile'];?></td>
-                                    <td><?php echo $row['password'];?></td>
+                                    <!-- <td><?php echo $row['password'];?></td> -->
 									 <td><?php if($row['status'] == 1){echo 'Active';}else{echo 'Deactive';}?></td>
 									 <td><?php echo $row['wallet'];?></td>
                                     <td><?php if($row['status'] == 1) {?>
@@ -136,7 +136,7 @@ else
                                         </a>
 										
 										<a class="btn btn-success" href="?a_bal=<?php echo $row['id'];?>" data-original-title="" title="">
-                                            Add Balance
+                    Ajouter un solde
                                         </a>
 										</td>
                                    
@@ -164,7 +164,7 @@ $id = $_GET['sid'];
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.info('User Status Update Successfully!!');
+    toastr.info("Mise à jour du statut de l'utilisateur réussie !!");
 	setTimeout(function()
 	{
 		window.location.href="user.php";
@@ -182,7 +182,7 @@ $con->query("delete from user where id=".$_GET['dele']."");
   $(document).ready(function() {
     toastr.options.timeOut = 4500; // 1.5s
 
-    toastr.error('selected user deleted successfully.');
+    toastr.error("l'utilisateur sélectionné a été supprimé avec succès.");
     setTimeout(function()
 	{
 		window.location.href="user.php";
