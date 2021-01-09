@@ -20,9 +20,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">User Address List</h4>
+                    <h4 class="card-title">Liste d'adresses utilisateur</h4>
 					<div class="text-right">
-					<a href="user.php" class="btn btn-primary">Back To User List</a>
+					<a href="user.php" class="btn btn-primary">Retour à la liste des utilisateurs</a>
 					</div>
                 </div>
                 <div class="card-body collapse show">
@@ -31,15 +31,10 @@
                         <table class="table table-striped table-bordered dom-jQuery-events">
                             <thead>
                                 <tr>
-								 <th>Sr No.</th>
-								  <th>Name</th>
-                                    <th>House No.</th>
-                                     <th>Society</th>
+								 <th>ID</th>
+								  <th>Nom</th>
 									 <th>Area</th>
-									 <th>Pincode</th>
-									  <th>Landmark</th>
 									 
-									  <th>Type</th>
                                     
 
                                 </tr>
@@ -56,13 +51,8 @@
                                     
                                     <td><?php echo $i; ?></td>
 									<td><?php echo $row['name'];?></td>
-                                    <td><?php echo $row['hno'];?></td>
-                                     <td><?php echo $row['society'];?></td>
 									 <td><?php echo $row['area'];?></td>
-									 <td><?php echo $row['pincode'];?></td>
-									 <td><?php echo $row['landmark'];?></td>
 									
-									 <td><?php echo $row['type'];?></td>
                                   
                                    
                                 </tr>
