@@ -31,9 +31,9 @@
                         <table class="table table-striped table-bordered dom-jQuery-events">
                             <thead>
                                 <tr>
-								 <th>Sr No.</th>
+								 <th>ID</th>
                                    
-                                    <th>Name</th>
+                                    <th>Nom</th>
                                     <th>Mobile</th>
                                     <th>Noter l'étoile</th>
                                     <th>Message</th>
