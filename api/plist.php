@@ -75,7 +75,7 @@ else
       $rider = $con->query("select * from rider where id=".$rid."")->fetch_assoc();
             $c = $con->query("select * from address where id=".$address_id."");
       $c = $c->fetch_assoc();
-	  $address_cust = $c['hno'].','.$c['society'].','.$c['area'].','.$c['pincode'];
+	  $address_cust = $c['area'];
 $atype = $c['type'];
 $cname = $c['name'];	  
 $dc = $con->query("select * from area_db where name='".$c['area']."'");
