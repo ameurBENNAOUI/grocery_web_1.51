@@ -18,7 +18,7 @@ require 'include/front_header.php';
                     </div>
                     <div class="card-body">
                         <div class="card-block">
-                            <h2 class="black font-weight-normal">Login</h2>
+                            <h2 class="black font-weight-normal">S'identifier</h2>
                             <form method="post">
                                 <div class="form-group">
                                     <div class="col-md-12">
@@ -28,7 +28,7 @@ require 'include/front_header.php';
 
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="password" class="form-control" name="inputPass" id="inputPass" placeholder="Password" required>
+                                        <input type="password" class="form-control" name="inputPass" id="inputPass" placeholder="Mot de passe" required>
                                     </div>
                                 </div>
 
@@ -36,7 +36,7 @@ require 'include/front_header.php';
 
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <button type="submit" name="sub_log" class="btn btn-pink btn-block btn-dark">Login</button>
+                                        <button type="submit" name="sub_log" class="btn btn-pink btn-block btn-dark">S'identifier</button>
                                        
                                     </div> 
                                 </div>
@@ -67,7 +67,7 @@ require 'include/front_header.php';
                     {
                     ?>
                     <script>
-                    alert('email address and password wrong!');
+                    alert('adresse e-mail et mot de passe erronés!');
                     </script>
                     <?php 
                     }
