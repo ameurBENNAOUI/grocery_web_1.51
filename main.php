@@ -58,7 +58,7 @@ else
                 <ul class="menu-content">
                   <li><a href="subcategory_.php" class="menu-item active">Ajouter Module</a>
                   </li>
-                  <li><a href="subcategorylist_.php" class="menu-item">Cours Lists</a>
+                  <li><a href="subcategorylist_.php" class="menu-item">Modules Lists</a>
                   </li>
                  
                     </ul>
